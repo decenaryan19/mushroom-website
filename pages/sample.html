@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Suwannee Bell Farms</title>
-  <meta name="description" content="Contact Suwannee Bell Farms — Robert Ledek, Farmer. Phone (352) 559-4295. 1509 SW 22 Ct. Bell, Florida 32619." />
+  <title>Request Free Sample | Suwannee Bell Farms</title>
+  <meta name="description" content="Request a free sample of organic oak log shiitake mushrooms from Suwannee Bell Farms. Experience the rich, earthy flavors of forest-grown shiitake." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -28,23 +28,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body class="font-sans text-gray-800 bg-cream antialiased">
 
   <header class="sticky top-0 z-50 bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 lg:h-20">
-        <a href="index.html" class="flex-shrink-0" aria-label="Suwannee Bell Farms — Home">
-          <img src="images/logo.png" alt="Suwannee Bell Farms — Oak Log Shiitake" class="h-14 w-14 lg:h-16 lg:w-16 object-contain" />
+        <a href="../index.html" class="flex-shrink-0" aria-label="Suwannee Bell Farms — Home">
+          <img src="../images/logo.png" alt="Suwannee Bell Farms — Oak Log Shiitake" class="h-14 w-14 lg:h-16 lg:w-16 object-contain" />
         </a>
         <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main navigation">
-          <a href="index.html" class="nav-link">HOME</a>
+          <a href="../index.html" class="nav-link">HOME</a>
           <a href="product.html" class="nav-link">PRODUCT</a>
           <a href="articles.html" class="nav-link">ARTICLES</a>
           <a href="about.html" class="nav-link">ABOUT</a>
-          <a href="sample.html" class="nav-link">REQUEST FREE SAMPLE</a>
-          <a href="contact.html" class="nav-link nav-link-active">CONTACT</a>
+          <a href="sample.html" class="nav-link nav-link-active">REQUEST FREE SAMPLE</a>
+          <a href="contact.html" class="nav-link">CONTACT</a>
         </nav>
         <div class="flex items-center gap-3">
           <button type="button" class="p-2 text-gray-600 hover:text-forest transition-colors" aria-label="Search">
@@ -58,68 +58,79 @@
     </div>
     <nav id="mobile-menu" class="lg:hidden hidden border-t border-gray-100 bg-white" aria-label="Mobile navigation">
       <div class="px-4 py-4 space-y-1">
-        <a href="index.html" class="mobile-nav-link">HOME</a>
+        <a href="../index.html" class="mobile-nav-link">HOME</a>
         <a href="product.html" class="mobile-nav-link">PRODUCT</a>
         <a href="articles.html" class="mobile-nav-link">ARTICLES</a>
         <a href="about.html" class="mobile-nav-link">ABOUT</a>
-        <a href="sample.html" class="mobile-nav-link">REQUEST FREE SAMPLE</a>
-        <a href="contact.html" class="mobile-nav-link mobile-nav-link-active">CONTACT</a>
+        <a href="sample.html" class="mobile-nav-link mobile-nav-link-active">REQUEST FREE SAMPLE</a>
+        <a href="contact.html" class="mobile-nav-link">CONTACT</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <div class="bg-forest py-4 px-4">
-      <h1 class="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl font-semibold tracking-widest uppercase">Contact Us</h1>
+    <div class="bg-terracotta py-4 px-4">
+      <h1 class="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl font-semibold tracking-widest uppercase">
+        Request Your Free Shiitake Sample Today!
+      </h1>
     </div>
 
-    <!-- Business Cards -->
-    <section class="py-10 lg:py-14 bg-cream">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          <img src="images/contact-values-card.png" alt="Suwannee Bell Farms — Fresh, Local, Organic, Sustainable" class="w-full h-auto shadow-md" />
-          <img src="images/contact-business-card.png" alt="Robert Ledek, Farmer — Suwannee Bell Farms contact information" class="w-full h-auto shadow-md" />
-        </div>
-      </div>
-    </section>
+    <section class="sample-page py-12 lg:py-16">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-6 text-gray-700 leading-relaxed mb-10">
+          <p>
+            Experience the rich, earthy flavors of our premium organic oak log shiitake mushrooms — hand-harvested at peak maturity from our forest farm in Bell, Florida. We invite chefs, restaurant owners, and food enthusiasts to discover why our shiitakes are the choice of discerning culinary professionals.
+          </p>
 
-    <!-- Form & Map -->
-    <section class="pb-16 lg:pb-24 bg-cream">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          <form id="contact-form" class="space-y-5">
-            <div>
-              <label for="contact-name" class="form-label">Name</label>
-              <input type="text" id="contact-name" name="name" class="form-input" required />
-            </div>
-            <div>
-              <label for="contact-email" class="form-label">Email</label>
-              <input type="email" id="contact-email" name="email" class="form-input" required />
-            </div>
-            <div>
-              <label for="contact-subject" class="form-label">Subject</label>
-              <input type="text" id="contact-subject" name="subject" class="form-input" required />
-            </div>
-            <div>
-              <label for="contact-message" class="form-label">Message</label>
-              <textarea id="contact-message" name="message" rows="6" class="form-input form-textarea" required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">SUBMIT</button>
-          </form>
-
-          <div class="contact-map">
-            <iframe
-              title="Suwannee Bell Farms location map"
-              src="https://maps.google.com/maps?q=1509+SW+22+Ct,+Bell,+FL+32619&hl=en&z=14&output=embed"
-              width="100%"
-              height="100%"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div>
+            <h2 class="font-semibold text-gray-900 mb-2">What you'll receive:</h2>
+            <ul class="space-y-1 list-disc list-inside">
+              <li>A generous portion of our organic oak log forest grown shiitake mushrooms</li>
+              <li>Freshly harvested and shipped within 24 hours</li>
+              <li>Information about our growing methods and farm practices</li>
+              <li>Recipe suggestions from our culinary partners</li>
+            </ul>
           </div>
+
+          <div>
+            <h2 class="font-semibold text-gray-900 mb-2">Why choose our shiitake mushrooms?</h2>
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Certified organic, grown on sustainably harvested oak logs</li>
+              <li>Distinctive cracked cap pattern indicating premium quality</li>
+              <li>Rich umami flavor and meaty texture unmatched by indoor-grown varieties</li>
+              <li>Hand-selected at peak maturity for maximum flavor and nutrition</li>
+              <li>Supporting sustainable forest farming and local agriculture</li>
+            </ul>
+          </div>
+
+          <p>
+            Ready to savor the taste of the forest? Fill out the form below and we'll send you a complimentary sample of our finest shiitake mushrooms.
+          </p>
         </div>
+
+        <form id="sample-form" class="space-y-5">
+          <div>
+            <label for="company-name" class="form-label">Company Name</label>
+            <input type="text" id="company-name" name="company" class="form-input" required />
+          </div>
+          <div>
+            <label for="sample-email" class="form-label">Email Address</label>
+            <input type="email" id="sample-email" name="email" class="form-input" required />
+          </div>
+          <div>
+            <label for="business-phone" class="form-label">Business Phone</label>
+            <input type="tel" id="business-phone" name="phone" class="form-input" required />
+          </div>
+          <div>
+            <label for="sample-address" class="form-label">Address</label>
+            <textarea id="sample-address" name="address" rows="4" class="form-input form-textarea" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">SUBMIT</button>
+        </form>
+
+        <p class="text-terracotta text-center mt-8 font-medium">
+          Limited quantities available, so don't miss out!
+        </p>
       </div>
     </section>
   </main>
@@ -130,7 +141,7 @@
         <div>
           <h4 class="text-sm font-semibold tracking-widest uppercase mb-5">Quick Links</h4>
           <ul class="space-y-2.5 text-sm text-white/85">
-            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="../index.html" class="footer-link">Home</a></li>
             <li><a href="product.html" class="footer-link">Product</a></li>
             <li><a href="about.html" class="footer-link">About</a></li>
             <li><a href="contact.html" class="footer-link">Contact</a></li>
@@ -170,6 +181,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
