@@ -1,336 +1,688 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="night">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Suwannee Bell Farms | Oak Log Shiitake Mushrooms</title>
-  <meta name="description" content="Suwannee Bell Farms — premium organic oak log forest grown shiitake mushrooms, sustainably cultivated in the heart of the forest." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            terracotta: '#C4704A',
-            forest: '#3D7A3D',
-            cream: '#F9F8F3',
-            'forest-dark': '#2D5A2D',
-            'nav-active': '#E8F5E0',
-          },
-          fontFamily: {
-            serif: ['"Playfair Display"', 'Georgia', 'serif'],
-            sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Decena Ryan — QA Automation Engineer & Digital Operations Specialist</title>
+<meta name="description" content="Decena Ryan — QA Automation Engineer & Digital Operations Specialist bridging software testing with business operations." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ========== TOKENS ========== */
+:root {
+  --bg: #f7f7f5;
+  --bg-2: #ececea;
+  --fg: #0e0e10;
+  --fg-2: #4a4a52;
+  --muted: #8a8a93;
+  --line: rgba(14,14,16,.10);
+  --card: #ffffff;
+  --accent: #2b2b2e;
+  --accent-glow: rgba(0,0,0,.06);
+  --shadow: 0 30px 60px -30px rgba(0,0,0,.18);
+  --radius: 18px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+[data-theme="night"] {
+  --bg: #08080a;
+  --bg-2: #0f0f12;
+  --fg: #f4f4f6;
+  --fg-2: #b5b5bd;
+  --muted: #6c6c75;
+  --line: rgba(255,255,255,.08);
+  --card: #111114;
+  --accent: #d4af6a; /* luxury gold */
+  --accent-glow: rgba(212,175,106,.18);
+  --shadow: 0 30px 80px -30px rgba(0,0,0,.7);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background .6s var(--ease), color .6s var(--ease);
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+/* ========== NAV ========== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  backdrop-filter: blur(18px);
+  background: color-mix(in oklab, var(--bg) 70%, transparent);
+  border-bottom: 1px solid var(--line);
+  transition: background .5s var(--ease);
+}
+.nav-inner {
+  max-width: 1240px; margin: 0 auto; padding: 18px 28px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.logo { font-weight: 800; font-size: 20px; letter-spacing: -.02em; }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--fg-2); transition: color .3s; }
+.nav-links a:hover { color: var(--accent); }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* THEME TOGGLE */
+.theme-toggle { background: none; border: none; cursor: pointer; padding: 0; }
+.toggle-track {
+  width: 56px; height: 30px; border-radius: 999px;
+  background: var(--bg-2); border: 1px solid var(--line);
+  display: flex; align-items: center; padding: 3px;
+  transition: background .4s;
+}
+.toggle-thumb {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--fg); color: var(--bg);
+  display: grid; place-items: center;
+  transform: translateX(0);
+  transition: transform .5s var(--ease), background .4s;
+}
+[data-theme="night"] .toggle-thumb { transform: translateX(26px); background: var(--accent); color: #08080a; }
+.toggle-thumb svg { width: 14px; height: 14px; position: absolute; transition: opacity .3s; }
+.icon-sun { opacity: 1; } .icon-moon { opacity: 0; }
+[data-theme="night"] .icon-sun { opacity: 0; }
+[data-theme="night"] .icon-moon { opacity: 1; }
+
+/* ========== HERO ========== */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; padding: 120px 0 80px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(800px 500px at 80% 20%, var(--accent-glow), transparent 60%),
+    radial-gradient(600px 400px at 10% 80%, var(--accent-glow), transparent 60%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; }
+.eyebrow {
+  font-size: 12px; letter-spacing: .25em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 24px; font-weight: 600;
+}
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  font-weight: 800; letter-spacing: -.035em; line-height: 1.02;
+  margin-bottom: 28px;
+}
+.hero-title em { font-style: italic; font-weight: 400; color: var(--accent); }
+.accent { color: var(--accent); }
+.hero-sub { font-size: 18px; color: var(--fg-2); margin-bottom: 40px; font-weight: 400; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 80px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 16px 30px; border-radius: 999px; font-weight: 600; font-size: 15px;
+  border: 1px solid transparent; cursor: pointer;
+  transition: transform .3s var(--ease), background .3s, color .3s, border-color .3s;
+}
+.btn.full { width: 100%; }
+.btn-primary { background: var(--fg); color: var(--bg); }
+.btn-primary:hover { transform: translateY(-2px); }
+[data-theme="night"] .btn-primary { background: var(--accent); color: #08080a; }
+.btn-ghost { border-color: var(--line); color: var(--fg); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+  max-width: 600px; padding-top: 40px; border-top: 1px solid var(--line);
+}
+.hero-stats strong { display: block; font-size: 32px; font-weight: 800; letter-spacing: -.02em; }
+.hero-stats span { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .15em; }
+.scroll-cue {
+  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+  font-size: 10px; letter-spacing: .4em; color: var(--muted);
+  writing-mode: vertical-rl; animation: bob 2.5s ease-in-out infinite;
+}
+@keyframes bob { 0%,100%{transform:translate(-50%,0)} 50%{transform:translate(-50%,8px)} }
+
+/* ========== SECTIONS ========== */
+.section { padding: 140px 0; position: relative; }
+.section.alt { background: var(--bg-2); }
+.section-head { margin-bottom: 70px; max-width: 800px; }
+.section-head h2 {
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-weight: 800; letter-spacing: -.03em; line-height: 1.05;
+}
+
+/* ========== TABS ========== */
+.tabs {
+  display: inline-flex; gap: 4px; padding: 6px;
+  background: var(--bg-2); border: 1px solid var(--line);
+  border-radius: 999px; margin-bottom: 50px;
+}
+.tab {
+  padding: 12px 24px; border-radius: 999px; border: none; cursor: pointer;
+  font-family: inherit; font-weight: 600; font-size: 14px;
+  background: transparent; color: var(--fg-2);
+  transition: background .3s, color .3s;
+}
+.tab.active { background: var(--fg); color: var(--bg); }
+[data-theme="night"] .tab.active { background: var(--accent); color: #08080a; }
+
+.tab-panel { display: none; animation: fadeUp .6s var(--ease); }
+.tab-panel.active { display: block; }
+@keyframes fadeUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+/* ========== BENTO ========== */
+.bento {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px; gap: 16px;
+}
+.bento-item {
+  position: relative; border-radius: var(--radius); overflow: hidden;
+  background: var(--card) center/cover no-repeat;
+  border: 1px solid var(--line); cursor: pointer;
+  transition: transform .6s var(--ease), box-shadow .5s;
+}
+.bento-item::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: var(--img); background-size: cover; background-position: center;
+  transition: transform .8s var(--ease);
+}
+.bento-item::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.85));
+}
+.bento-item:hover { box-shadow: var(--shadow); }
+.bento-item:hover::before { transform: scale(1.08); }
+.bento-item.large { grid-column: span 2; grid-row: span 2; }
+.bento-item.wide { grid-column: span 2; }
+.bento-meta {
+  position: absolute; bottom: 22px; left: 22px; right: 22px; z-index: 2; color: #fff;
+}
+.bento-meta span { font-size: 11px; text-transform: uppercase; letter-spacing: .2em; opacity: .8; }
+.bento-meta h3 { font-size: 20px; font-weight: 700; margin-top: 6px; }
+@media (max-width: 800px) {
+  .bento { grid-template-columns: repeat(2, 1fr); }
+  .bento-item.large, .bento-item.wide { grid-column: span 2; }
+  .bento-item.large { grid-row: span 1; }
+}
+
+/* ========== VIDEO ========== */
+.video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.video-card {
+  position: relative; aspect-ratio: 16/10; border-radius: var(--radius);
+  overflow: hidden; cursor: pointer;
+  background: var(--card) center/cover no-repeat;
+  border: 1px solid var(--line);
+  transition: transform .5s var(--ease);
+}
+.video-card::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: var(--thumb); background-size: cover; background-position: center;
+  transition: transform .8s var(--ease);
+}
+.video-card::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.7));
+}
+.video-card:hover::before { transform: scale(1.06); }
+.play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 72px; height: 72px; border-radius: 50%; z-index: 2;
+  background: rgba(255,255,255,.95); color: #08080a;
+  display: grid; place-items: center;
+  transition: transform .3s, background .3s;
+}
+[data-theme="night"] .play { background: var(--accent); }
+.play svg { width: 28px; height: 28px; margin-left: 4px; }
+.video-card:hover .play { transform: translate(-50%,-50%) scale(1.1); }
+.video-meta { position: absolute; bottom: 22px; left: 22px; z-index: 2; color: #fff; }
+.video-meta span { font-size: 11px; text-transform: uppercase; letter-spacing: .2em; opacity: .8; }
+.video-meta h3 { font-size: 20px; font-weight: 700; margin-top: 6px; }
+@media (max-width: 720px) { .video-grid { grid-template-columns: 1fr; } }
+
+/* ========== SOCIAL ========== */
+.social-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.social-card {
+  display: flex; gap: 24px; padding: 24px; border-radius: var(--radius);
+  background: var(--card); border: 1px solid var(--line);
+  transition: transform .4s var(--ease), border-color .4s;
+}
+.social-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.social-thumb {
+  width: 130px; height: 130px; border-radius: 14px; flex-shrink: 0;
+  background-size: cover; background-position: center;
+}
+.social-body { display: flex; flex-direction: column; justify-content: center; }
+.badge {
+  display: inline-block; font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+  padding: 5px 10px; border: 1px solid var(--accent); color: var(--accent);
+  border-radius: 999px; margin-bottom: 12px; width: fit-content; font-weight: 700;
+}
+.social-body h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; letter-spacing: -.01em; }
+.social-body p { color: var(--fg-2); font-size: 14px; }
+@media (max-width: 800px) {
+  .social-grid { grid-template-columns: 1fr; }
+  .social-card { flex-direction: column; }
+  .social-thumb { width: 100%; height: 180px; }
+}
+
+/* ========== EXPERIENCE ========== */
+.exp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.exp-card {
+  padding: 36px; border-radius: var(--radius);
+  background: var(--card); border: 1px solid var(--line);
+  position: relative; transition: transform .4s var(--ease), border-color .4s;
+}
+.exp-card::before {
+  content: ''; position: absolute; left: 0; top: 36px; bottom: 36px; width: 3px;
+  background: var(--accent); border-radius: 3px;
+}
+.exp-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.exp-year { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
+.exp-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; letter-spacing: -.01em; }
+.exp-card p { color: var(--fg-2); font-size: 15px; }
+@media (max-width: 720px) { .exp-grid { grid-template-columns: 1fr; } }
+
+/* ========== SKILLS ========== */
+.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.skill-card {
+  padding: 32px; border-radius: var(--radius);
+  background: var(--card); border: 1px solid var(--line);
+  position: relative; transition: transform .4s var(--ease), border-color .4s;
+}
+.skill-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.skill-card .dot {
+  display: block; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent); margin-bottom: 18px;
+  box-shadow: 0 0 0 6px var(--accent-glow);
+}
+.skill-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 14px; letter-spacing: -.01em; }
+.skill-card ul { list-style: none; }
+.skill-card li { font-size: 14px; color: var(--fg-2); padding: 4px 0; }
+@media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .skills-grid { grid-template-columns: 1fr; } }
+
+/* ========== CONTACT ========== */
+.contact { padding-bottom: 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.contact-sub { color: var(--fg-2); font-size: 17px; margin: 16px 0 28px; }
+.contact-info { display: flex; flex-direction: column; gap: 10px; padding-bottom: 30px; border-bottom: 1px solid var(--line); margin-bottom: 30px; }
+.contact-info a { font-size: 20px; font-weight: 600; color: var(--accent); }
+.contact-info span { font-size: 14px; color: var(--muted); }
+.map {
+  width: 100%; aspect-ratio: 16/10; border-radius: var(--radius);
+  overflow: hidden; border: 1px solid var(--line); filter: grayscale(1) contrast(.95);
+}
+[data-theme="night"] .map { filter: grayscale(1) invert(.92) contrast(.85); }
+
+/* FORM */
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.field { position: relative; }
+.field input, .field textarea {
+  width: 100%; background: transparent; border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0 10px; font-family: inherit; font-size: 16px; color: var(--fg);
+  outline: none; resize: none;
+  transition: border-color .4s;
+}
+.field label {
+  position: absolute; left: 0; top: 22px; font-size: 16px; color: var(--muted);
+  pointer-events: none; transition: all .3s var(--ease);
+}
+.field input:focus, .field textarea:focus { border-color: var(--accent); }
+.field input:focus + label, .field input:valid + label,
+.field textarea:focus + label, .field textarea:valid + label {
+  top: 0; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--accent);
+}
+.sent { color: var(--accent); font-size: 14px; margin-top: 10px; }
+
+.footer {
+  margin-top: 100px; padding: 30px 0;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: var(--muted);
+}
+.footer div { display: flex; gap: 24px; }
+.footer a:hover { color: var(--accent); }
+@media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; gap: 50px; } .footer { flex-direction: column; gap: 16px; } }
+
+/* ========== REVEAL ========== */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ========== LIGHTBOX ========== */
+.lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(0,0,0,.92); backdrop-filter: blur(20px);
+  display: none; align-items: center; justify-content: center; padding: 40px;
+  opacity: 0; transition: opacity .4s;
+}
+.lightbox.open { display: flex; opacity: 1; }
+.lb-frame {
+  width: 100%; max-width: 1100px; aspect-ratio: 16/9;
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,.6);
+  transform: scale(.95); transition: transform .4s var(--ease);
+}
+.lightbox.open .lb-frame { transform: scale(1); }
+.lb-frame iframe { width: 100%; height: 100%; border: 0; }
+.lb-close {
+  position: absolute; top: 30px; right: 36px;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+  color: #fff; font-size: 28px; cursor: pointer;
+  transition: background .3s;
+}
+.lb-close:hover { background: rgba(255,255,255,.2); }
+
+</style>
 </head>
-<body class="font-sans text-gray-800 bg-cream antialiased">
+<body>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 lg:h-20">
-        <!-- Logo -->
-        <a href="index.html" class="flex-shrink-0" aria-label="Suwannee Bell Farms — Home">
-          <img src="images/logo.png" alt="Suwannee Bell Farms — Oak Log Shiitake" class="h-14 w-14 lg:h-16 lg:w-16 object-contain" />
-        </a>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">DR<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-track">
+        <span class="toggle-thumb">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+      </span>
+    </button>
+  </div>
+</nav>
 
-        <!-- Desktop Nav -->
-        <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main navigation">
-          <a href="index.html" class="nav-link nav-link-active">HOME</a>
-          <a href="pages/product.html" class="nav-link">PRODUCT</a>
-          <a href="pages/articles.html" class="nav-link">ARTICLES</a>
-          <a href="pages/about.html" class="nav-link">ABOUT</a>
-          <a href="pages/sample.html" class="nav-link">REQUEST FREE SAMPLE</a>
-          <a href="pages/contact.html" class="nav-link">CONTACT</a>
-        </nav>
+<header id="top" class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner reveal">
+    <p class="eyebrow">Portfolio · 2026</p>
+    <h1 class="hero-title">
+      Hi, I'm <span class="accent">Decena Ryan</span>.<br/>
+      I automate software testing,<br/>
+      optimize <em>digital</em> operations, and build brands.
+    </h1>
+    <p class="hero-sub">QA Automation · Digital Operations & CRM · Web Development</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">View Work</a>
+      <a href="#contact" class="btn btn-ghost">Let's Talk →</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>6+ Yrs</strong><span>Experience</span></div>
+      <div><strong>80%</strong><span>Regression Cut</span></div>
+      <div><strong>40+</strong><span>Sites Shipped</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL</div>
+</header>
 
-        <!-- Search & Mobile Toggle -->
-        <div class="flex items-center gap-3">
-          <button type="button" class="p-2 text-gray-600 hover:text-forest transition-colors" aria-label="Search">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-            </svg>
-          </button>
-          <button type="button" id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-forest transition-colors" aria-label="Open menu" aria-expanded="false">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-          </button>
+<section id="work" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2><span class="accent">Portfolio</span></h2>
+    </div>
+
+    <div class="tabs reveal">
+      <button class="tab active" data-tab="web">Automation & Web</button>
+      <button class="tab" data-tab="video">Production & AV</button>
+      <button class="tab" data-tab="social">Digital Ops & SMM</button>
+    </div>
+
+    <div class="tab-panel active" id="panel-web">
+      <div class="bento">
+        <div class="bento-item large reveal" data-img="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200">
+          <div class="bento-meta"><span>Mobile Automation</span><h3>Sun Life BDD Framework (Java/Appium)</h3></div>
+        </div>
+        <div class="bento-item reveal" data-img="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?w=900">
+          <div class="bento-meta"><span>Web Automation</span><h3>Selenium & Robot Framework Scripts</h3></div>
+        </div>
+        <div class="bento-item reveal" data-img="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=900">
+          <div class="bento-meta"><span>Performance</span><h3>LoadRunner & API Testing</h3></div>
+        </div>
+        <div class="bento-item reveal" data-img="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=900">
+          <div class="bento-meta"><span>ERP Dev</span><h3>Custom Odoo Modules (Python)</h3></div>
+        </div>
+        <div class="bento-item wide reveal" data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400">
+          <div class="bento-meta"><span>Web Dev & SEO</span><h3>WordPress & Elementor Brands</h3></div>
         </div>
       </div>
     </div>
 
-    <!-- Mobile Nav -->
-    <nav id="mobile-menu" class="lg:hidden hidden border-t border-gray-100 bg-white" aria-label="Mobile navigation">
-      <div class="px-4 py-4 space-y-1">
-        <a href="index.html" class="mobile-nav-link mobile-nav-link-active">HOME</a>
-        <a href="pages/product.html" class="mobile-nav-link">PRODUCT</a>
-        <a href="pages/articles.html" class="mobile-nav-link">ARTICLES</a>
-        <a href="pages/about.html" class="mobile-nav-link">ABOUT</a>
-        <a href="pages/sample.html" class="mobile-nav-link">REQUEST FREE SAMPLE</a>
-        <a href="pages/contact.html" class="mobile-nav-link">CONTACT</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Hero -->
-    <section id="home" class="relative">
-      <div id="hero-carousel" class="relative overflow-hidden">
-        <div class="hero-slide active">
-          <img
-            src="images/hero-1.png"
-            alt="Shiitake mushrooms growing on oak logs in the forest"
-            class="w-full h-[50vh] sm:h-[60vh] lg:h-[75vh] object-cover"
-          />
+    <div class="tab-panel" id="panel-video">
+      <div class="video-grid">
+        <div class="video-card reveal" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ" data-thumb="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=900">
+          <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="video-meta"><span>Live Stream</span><h3>Church Ministry Digital Production</h3></div>
         </div>
-        <div class="hero-slide">
-          <img
-            src="images/hero-2.png"
-            alt="Freshly harvested shiitake mushrooms on oak logs"
-            class="w-full h-[50vh] sm:h-[60vh] lg:h-[75vh] object-cover"
-          />
+        <div class="video-card reveal" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ" data-thumb="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=900">
+          <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="video-meta"><span>Short-Form</span><h3>CapCut Viral Video Edits</h3></div>
         </div>
-        <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-          <a href="pages/product.html" class="btn-hero">BUY NOW</a>
+        <div class="video-card reveal" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ" data-thumb="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=900">
+          <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="video-meta"><span>AV Setup</span><h3>Technical Audio/Visual Mastery</h3></div>
         </div>
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-          <button type="button" class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
-          <button type="button" class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+        <div class="video-card reveal" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ" data-thumb="https://images.unsplash.com/photo-1500627964684-141351970a7f?w=900">
+          <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="video-meta"><span>OBS Studio</span><h3>Advanced Broadcast Engineering</h3></div>
         </div>
       </div>
-    </section>
-
-    <!-- Product Banner -->
-    <div class="bg-terracotta py-4 px-4">
-      <h2 class="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl font-semibold tracking-widest uppercase">
-        Organic Oak Log Forest Grown Shiitake Mushrooms
-      </h2>
     </div>
 
-    <!-- Product Detail -->
-    <section id="product" class="product-section py-12 lg:py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div class="order-2 lg:order-1">
-            <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-forest font-semibold mb-6">
-              The Ultimate Gourmet Mushroom
-            </h3>
-            <div class="space-y-4 text-gray-600 leading-relaxed font-serif text-base lg:text-lg">
-              <p>
-                Our shiitake mushrooms are cultivated the traditional way — grown on sustainably harvested oak logs in the heart of a temperate forest. This time-honored method produces mushrooms with a rich, meaty texture and deep umami flavor that simply cannot be replicated indoors.
-              </p>
-              <p>
-                Each mushroom is hand-selected at peak maturity, ensuring maximum nutritional value. Shiitake mushrooms are naturally rich in B vitamins, selenium, and immune-supporting polysaccharides, making them as nourishing as they are delicious.
-              </p>
-              <p>
-                From forest floor to your kitchen, we maintain the highest organic standards. No pesticides, no artificial substrates — just pure oak, clean water, and the patience that great mushrooms demand.
-              </p>
-            </div>
-            <a href="pages/product.html" class="btn-primary inline-block mt-8">BUY NOW</a>
-          </div>
-          <div class="order-1 lg:order-2 flex justify-center">
-            <div class="product-image-card">
-              <img
-                src="images/product.png"
-                alt="Fresh organic shiitake mushrooms on a ceramic plate"
-                class="w-full max-w-md lg:max-w-none h-auto object-cover rounded-sm shadow-xl"
-              />
-            </div>
+    <div class="tab-panel" id="panel-social">
+      <div class="social-grid">
+        <div class="social-card reveal">
+          <div class="social-thumb" style="background-image:url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800')"></div>
+          <div class="social-body">
+            <div class="badge">CRM Operations</div>
+            <h3>GoHighLevel & Lead Connector</h3>
+            <p>Managing CRM pipelines, implementing automations, system workflows, and user security audits.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Recipes -->
-    <section id="recipes" class="py-12 lg:py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10 lg:mb-14">
-          <div class="inline-flex flex-col items-center">
-            <img src="images/logo.png" alt="" class="w-14 h-14 mb-3 object-contain" aria-hidden="true" />
-            <h2 class="font-serif text-3xl sm:text-4xl text-forest font-semibold">Recipe</h2>
+        <div class="social-card reveal">
+          <div class="social-thumb" style="background-image:url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800')"></div>
+          <div class="social-body">
+            <div class="badge">SEO Strategy</div>
+            <h3>On-Page SEO Optimization</h3>
+            <p>Optimizing WordPress service pages to maximize search visibility, ranking, and speed performance.</p>
           </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          <article class="recipe-card group">
-            <div class="overflow-hidden">
-              <img
-                src="images/recipe-grill.png"
-                alt="Grilled shiitake mushrooms on a wooden board"
-                class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="recipe-card-body">
-              <h3 class="font-serif text-lg text-gray-800 text-center">Grill Shiitake Mushrooms</h3>
-            </div>
-          </article>
-          <article class="recipe-card group">
-            <div class="overflow-hidden">
-              <img
-                src="images/recipe-roast.png"
-                alt="Roasted shiitake mushrooms in a bowl"
-                class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="recipe-card-body">
-              <h3 class="font-serif text-lg text-gray-800 text-center">Roast Shiitake Mushrooms</h3>
-            </div>
-          </article>
-          <article class="recipe-card group sm:col-span-2 lg:col-span-1">
-            <div class="overflow-hidden">
-              <img
-                src="images/recipe-stir-fry.png"
-                alt="Stir fry with shiitake mushrooms and fresh vegetables"
-                class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="recipe-card-body">
-              <h3 class="font-serif text-lg text-gray-800 text-center">Stir Fry Shiitake Mushrooms</h3>
-            </div>
-          </article>
+        <div class="social-card reveal">
+          <div class="social-thumb" style="background-image:url('https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800')"></div>
+          <div class="social-body">
+            <div class="badge">Church Ministry</div>
+            <h3>Media & Tech Leadership</h3>
+            <p>Guiding complete digital brand alignment across online assets and physical systems since 2018.</p>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Photo Gallery -->
-    <section id="gallery" class="gallery-grid">
-      <div class="gallery-item">
-        <img
-          src="images/gallery-1.png"
-          alt="Shiitake mushrooms growing on oak logs in the forest"
-        />
-      </div>
-      <div class="gallery-item">
-        <img
-          src="images/gallery-2.png"
-          alt="Single shiitake mushroom sprouting from a vertical oak log"
-        />
-      </div>
-      <div class="gallery-item">
-        <img
-          src="images/gallery-3.png"
-          alt="Oak log rows in the forest mushroom farm"
-        />
-      </div>
-      <div class="gallery-item">
-        <img
-          src="images/gallery-4.png"
-          alt="Farmer harvesting fresh mushrooms in the forest farm"
-        />
-      </div>
-    </section>
-
-    <!-- Articles Banner -->
-    <div id="articles" class="bg-terracotta py-4 px-4">
-      <h2 class="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl font-semibold tracking-widest uppercase">
-        Articles
-      </h2>
-    </div>
-
-    <!-- Articles Grid -->
-    <section class="py-12 lg:py-20 bg-cream">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          <article class="article-card group">
-            <div class="overflow-hidden">
-              <img
-                src="images/article-1.png"
-                alt="Grilled mushroom skewers as a meat alternative"
-                class="w-full h-52 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="article-card-body">
-              <h3 class="font-serif text-base sm:text-lg text-gray-800">Shiitake Mushrooms as a Meat Alternative</h3>
-            </div>
-          </article>
-          <article class="article-card group">
-            <div class="overflow-hidden">
-              <img
-                src="images/article-2.png"
-                alt="Hands holding freshly harvested shiitake mushrooms"
-                class="w-full h-52 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="article-card-body">
-              <h3 class="font-serif text-base sm:text-lg text-gray-800">The History of Shiitake Mushrooms</h3>
-            </div>
-          </article>
-          <article class="article-card group sm:col-span-2 lg:col-span-1">
-            <div class="overflow-hidden">
-              <img
-                src="images/article-3.png"
-                alt="Nutritious vegan bowl with shiitake mushrooms and vegetables"
-                class="w-full h-52 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="article-card-body">
-              <h3 class="font-serif text-base sm:text-lg text-gray-800">A Delicious and Nutritious Vegan Choice</h3>
-            </div>
-          </article>
-        </div>
-        <div class="text-center mt-10 lg:mt-14">
-          <a href="pages/articles.html" class="btn-secondary">VIEW MORE</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer id="contact" class="bg-forest text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8">
-        <div>
-          <h4 class="text-sm font-semibold tracking-widest uppercase mb-5">Quick Links</h4>
-          <ul class="space-y-2.5 text-sm text-white/85">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="pages/product.html" class="footer-link">Product</a></li>
-            <li><a href="pages/about.html" class="footer-link">About</a></li>
-            <li><a href="pages/contact.html" class="footer-link">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-sm font-semibold tracking-widest uppercase mb-5">Useful Info</h4>
-          <ul class="space-y-2.5 text-sm text-white/85">
-            <li><a href="pages/sample.html" class="footer-link">FAQ</a></li>
-            <li><a href="pages/articles.html" class="footer-link">Articles</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-sm font-semibold tracking-widest uppercase mb-5">Contact Us</h4>
-          <ul class="space-y-2.5 text-sm text-white/85">
-            <li>Phone: <a href="tel:+13525594295" class="footer-link">(352) 559-4295</a></li>
-            <li>Email: <a href="mailto:sales@suwanneebellfarms.com" class="footer-link">sales@suwanneebellfarms.com</a></li>
-            <li>Web: <a href="https://suwanneebellfarms.com" class="footer-link">suwanneebellfarms.com</a></li>
-            <li>1509 SW 22 Ct. Bell, Florida 32619</li>
-          </ul>
+        <div class="social-card reveal">
+          <div class="social-thumb" style="background-image:url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800')"></div>
+          <div class="social-body">
+            <div class="badge">Project Tracking</div>
+            <h3>Jira & Agile Workflows</h3>
+            <p>Managing regression cycles, full stack tasks, and bug resolving with maximum technical integrity.</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="border-t border-white/20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-white/70">Copyright 2026 &copy; Suwannee Bell Farms LLC</p>
-        <div class="flex items-center gap-3">
-          <span class="payment-badge">VISA</span>
-          <span class="payment-badge">MC</span>
-          <span class="payment-badge">AMEX</span>
-          <span class="payment-badge">PayPal</span>
-        </div>
-        <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
-          </svg>
-        </button>
+  </div>
+</section>
+
+<section id="experience" class="section alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2><span class="accent">Experience</span></h2>
+    </div>
+    <div class="exp-grid">
+      <article class="exp-card reveal">
+        <div class="exp-year">2025 — 2026</div>
+        <h3>Mobile Automation & Performance Tester</h3>
+        <p><strong>Ascendion [Sun Life]</strong> — Engineered a BDD Mobile Framework (Java/Appium), cutting regression time by 80%. Architected automated suites with POM, boosting scalability by 30% via LoadRunner.</p>
+      </article>
+      <article class="exp-card reveal">
+        <div class="exp-year">2023 — 2025</div>
+        <h3>QA Automation Tester</h3>
+        <p><strong>We Support Inc. [Globe Telecom]</strong> — Automated test scripts using Java, Selenium, and Robot Framework across Web and Mobile. Handled rigorous regression cycles and Jira bug resolution.</p>
+      </article>
+      <article class="exp-card reveal">
+        <div class="exp-year">2024 — 2026</div>
+        <h3>Digital Operations & Marketing Specialist</h3>
+        <p><strong>Freelance & Consulting</strong> — Managed GoHighLevel CRM automations and audits. Developed responsive WordPress sites using Elementor and executed On-Page SEO strategies.</p>
+      </article>
+      <article class="exp-card reveal">
+        <div class="exp-year">2022 — 2023</div>
+        <h3>Jr. Programmer</h3>
+        <p><strong>We Support Inc. [Sky Cable]</strong> — Built custom Odoo modules using Python and XML while executing complex large-scale data migrations.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2><span class="accent">Skills</span></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <span class="dot"></span>
+        <h3>QA Automation</h3>
+        <ul><li>Appium · Selenium · Java</li><li>Cucumber (BDD) · POM</li><li>Robot Framework</li></ul>
+      </div>
+      <div class="skill-card reveal">
+        <span class="dot"></span>
+        <h3>Performance & API</h3>
+        <ul><li>LoadRunner (LRE) · VuGen</li><li>Postman · REST API</li><li>Jira · GitHub · CI/CD</li></ul>
+      </div>
+      <div class="skill-card reveal">
+        <span class="dot"></span>
+        <h3>Digital Operations</h3>
+        <ul><li>GoHighLevel · CRM Auto</li><li>WordPress · Elementor</li><li>Odoo Dev · Python · XML</li></ul>
+      </div>
+      <div class="skill-card reveal">
+        <span class="dot"></span>
+        <h3>Creative & Production</h3>
+        <ul><li>Video Editing (CapCut)</li><li>Canva · OBS Studio</li><li>AV Systems · Streaming</li></ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <h2><span class="accent">Contact</span></h2>
+      <h2>Let's build something <span class="accent">unforgettable</span>.</h2>
+      <p class="contact-sub">Available for QA roles, workflow engineering, and digital retainers. Guided by integrity.</p>
+      <div class="contact-info">
+        <a href="mailto:ryan.barbacena.decena@gmail.com">ryan.barbacena.decena@gmail.com</a>
+        <span>Novaliches, Quezon City, Philippines · Remote Worldwide</span>
+      </div>
+      <div class="map">
+        <iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=121.0000%2C14.6800%2C121.0800%2C14.7400&layer=mapnik" style="border:0;width:100%;height:100%"></iframe>
+      </div>
+    </div>
+    <form class="contact-form reveal" onsubmit="event.preventDefault(); this.querySelector('.sent').style.display='block';">
+      <div class="field"><input type="text" required /><label>Your name</label></div>
+      <div class="field"><input type="email" required /><label>Email</label></div>
+      <div class="field"><input type="text" required /><label>Company / Brand</label></div>
+      <div class="field"><textarea required rows="4"></textarea><label>Tell me about your project or role</label></div>
+      <button type="submit" class="btn btn-primary full">Send Message</button>
+      <p class="sent" style="display:none">✓ Message sent. I'll be in touch within 24 hours.</p>
+    </form>
+  </div>
+  <footer class="footer">
+    <span>© 2026 Decena Ryan. All rights reserved.</span>
+    <div><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a></div>
   </footer>
+</section>
 
-  <script src="js/script.js"></script>
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <div class="lb-frame"><iframe id="lbFrame" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+</div>
+
+<script>
+// THEME TOGGLE
+const root = document.documentElement;
+const toggle = document.getElementById('themeToggle');
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+toggle.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'night' ? 'day' : 'night';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// TABS
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const id = tab.dataset.tab;
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t === tab));
+    document.querySelectorAll('.tab-panel').forEach(p => {
+      p.classList.toggle('active', p.id === `panel-${id}`);
+    });
+  });
+});
+
+// BENTO / VIDEO background images via data attr
+document.querySelectorAll('[data-img]').forEach(el => {
+  el.style.setProperty('--img', `url('${el.dataset.img}')`);
+  el.style.backgroundImage = `url('${el.dataset.img}')`;
+});
+document.querySelectorAll('[data-thumb]').forEach(el => {
+  el.style.setProperty('--thumb', `url('${el.dataset.thumb}')`);
+  el.style.backgroundImage = `url('${el.dataset.thumb}')`;
+});
+
+// SCROLL REVEAL
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 60);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// PARALLAX HERO
+const heroBg = document.querySelector('.hero-bg');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (heroBg && y < window.innerHeight) {
+    heroBg.style.transform = `translateY(${y * 0.3}px)`;
+  }
+}, { passive: true });
+
+// LIGHTBOX
+const lb = document.getElementById('lightbox');
+const lbFrame = document.getElementById('lbFrame');
+const lbClose = document.getElementById('lbClose');
+document.querySelectorAll('.video-card').forEach(card => {
+  card.addEventListener('click', () => {
+    lbFrame.src = card.dataset.video + '?autoplay=1';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+function closeLb() {
+  lb.classList.remove('open');
+  lbFrame.src = '';
+  document.body.style.overflow = '';
+}
+lbClose.addEventListener('click', closeLb);
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+</script>
 </body>
 </html>
