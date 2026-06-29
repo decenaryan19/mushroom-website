@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suwannee Bell Farms | Oak Log Shiitake Mushrooms</title>
+  <meta name="description" content="Suwannee Bell Farms — premium organic oak log forest grown shiitake mushrooms, sustainably cultivated in the heart of the forest." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: '#DE7E3D', /* Matingkad na kulay ng banner mula sa 1st picture */
+            forest: '#3D7A3D',
+            cream: '#FFFDF9',
+            'forest-dark': '#2D5A2D',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+   /* Flickity styling para sa 4 na columns sa desktop, 2 sa tablet, 1 sa mobile */
+    .gallery-carousel .carousel-cell {
+      width: 100%;
+      margin-right: 16px;
+    }
+    @media (min-width: 640px) {
+      .gallery-carousel .carousel-cell {
+        width: calc(50% - 12px);
+      }
+    }
+    @media (min-width: 1024px) {
+      .gallery-carousel .carousel-cell {
+        width: calc(25% - 12px); /* Swak na 4 na images parin ang labas */
+      }
+    }
+
+    /* Custom color para sa Flickity buttons at dots */
+    .flickity-prev-next-button {
+      background: rgba(255, 255, 255, 0.9);
+      width: 44px;
+      height: 44px;
+    }
+    .flickity-prev-next-button:hover {
+      background: #3D7A3D;
+      color: white;
+    }
+    .flickity-page-dots .dot {
+      background: #DE7E3D;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 bg-cream antialiased">
+
+  <header class="sticky top-0 z-50 shadow-sm" style="background-color: #fffdee;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex-shrink-0" aria-label="Suwannee Bell Farms — Home">
+          <img src="images/logo.png" alt="Suwannee Bell Farms — Oak Log Shiitake" class="h-14 w-14 lg:h-16 lg:w-16 object-contain" />
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 font-sans font-bold text-sm tracking-widest text-black" aria-label="Main navigation">
+          <a href="index.html" class="border-2 border-[#4A7A4A] text-[#4A7A4A] px-5 py-1.5 rounded-full transition-all">HOME</a>
+          
+          <a href="pages/product.html" class="hover:text-[#4A7A4A] transition-colors py-1.5">PRODUCT</a>
+          <a href="pages/articles.html" class="hover:text-[#4A7A4A] transition-colors py-1.5">ARTICLES</a>
+          <a href="pages/about.html" class="hover:text-[#4A7A4A] transition-colors py-1.5">ABOUT</a>
+          <a href="pages/sample.html" class="hover:text-[#4A7A4A] transition-colors py-1.5">REQUEST FREE SAMPLE</a>
+          <a href="pages/contact.html" class="hover:text-[#4A7A4A] transition-colors py-1.5">CONTACT</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button type="button" class="p-2 text-gray-600 hover:text-forest transition-colors" aria-label="Search">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </button>
+          <button type="button" id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-forest transition-colors" aria-label="Open menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" class="lg:hidden hidden border-t border-gray-100 bg-white" aria-label="Mobile navigation">
+      <div class="px-4 py-4 space-y-1">
+        <a href="index.html" class="block px-3 py-2 border-2 border-[#4A7A4A] text-[#4A7A4A] text-center font-bold rounded-full text-sm">HOME</a>
+        <a href="pages/product.html" class="block px-3 py-2 text-gray-700 font-bold text-sm">PRODUCT</a>
+        <a href="pages/articles.html" class="block px-3 py-2 text-gray-700 font-bold text-sm">ARTICLES</a>
+        <a href="pages/about.html" class="block px-3 py-2 text-gray-700 font-bold text-sm">ABOUT</a>
+        <a href="pages/sample.html" class="block px-3 py-2 text-gray-700 font-bold text-sm">REQUEST FREE SAMPLE</a>
+        <a href="pages/contact.html" class="block px-3 py-2 text-gray-700 font-bold text-sm">CONTACT</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="relative">
+      <div id="hero-carousel" class="relative overflow-hidden">
+        <div class="hero-slide active">
+          <img
+            src="images/hero-1.png"
+            alt="Shiitake mushrooms growing on oak logs in the forest"
+            class="w-full h-[50vh] sm:h-[60vh] lg:h-[75vh] object-cover"
+          />
+        </div>
+        <div class="hero-slide">
+          <img
+            src="images/hero-2.png"
+            alt="Freshly harvested shiitake mushrooms on oak logs"
+            class="w-full h-[50vh] sm:h-[60vh] lg:h-[75vh] object-cover"
+          />
+        </div>
+        <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+          <a href="pages/product.html" class="border-2 border-white text-white font-sans font-bold px-6 py-2 hover:bg-white hover:text-black transition-all tracking-widest text-sm sm:text-base">BUY NOW</a>
+        </div>
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+          <button type="button" class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+          <button type="button" class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-terracotta py-4 px-4">
+      <h2 class="text-white text-center text-base sm:text-lg md:text-xl lg:text-2xl font-bold font-sans tracking-widest uppercase">
+        Organic Oak Log Forest Grown Shiitake Mushrooms
+      </h2>
+    </div>
+
+    <section id="product" class="product-section py-12 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <h4 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-forest font-semibold mb-6">
+              The Ultimate Gourmet Mushroom
+            </h4>
+            <div class="space-y-4 text-gray-600 leading-relaxed font-serif text-base lg:text-lg">
+              <p>
+                Looking for a delicious, nutritious, and sustainable mushroom? Look no further than organic oak log forest grown shiitake mushrooms! These mushrooms are grown on oak logs in the forest, where they have access to all the nutrients they need to thrive. The result is a mushroom that is packed with flavor, umami, and essential nutrients.
+Shiitake mushrooms are a good source of protein, fiber, and vitamins B and C. They are also low in calories and fat. Shiitake mushrooms have been shown to have a number of health benefits, including boosting the immune system, reducing inflammation, and improving heart health.
+              </p>
+              <p>
+                Organic oak log forest grown shiitake mushrooms are also a sustainable choice. Unlike many other mushrooms, shiitake mushrooms are not grown in artificial environments. Instead, they are grown on oak logs, which are a renewable resource. This means that you can enjoy these delicious and nutritious mushrooms without harming the environment.
+Order your organic oak log forest grown shiitake mushrooms today and experience the difference! These mushrooms are perfect for a variety of dishes, from stir-fries and soups to stews and pizzas. With their rich flavor and umami, shiitake mushrooms will add a new dimension to your cooking.</p>
+              <p>
+                We are so confident that you will love our organic oak log forest grown shiitake mushrooms that we offer a 100% satisfaction guarantee. If you are not happy with your purchase, simply return it for a full refund. </p>
+                <p>Order now and taste the difference!</p>
+            </div>
+            <a href="pages/product.html" class="btn-primary inline-block mt-8">BUY NOW</a>
+          </div>
+          <div class="order-1 lg:order-2 flex justify-center">
+            <div class="product-image-card">
+              <img
+                src="images/product.png"
+                alt="Fresh organic shiitake mushrooms on a ceramic plate"
+                class="w-full max-w-md lg:max-w-none h-auto object-cover rounded-sm shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recipes" class="py-12 lg:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10 lg:mb-14">
+          <div class="inline-flex flex-col items-center">
+            <img src="images/logo.png" alt="" class="w-14 h-14 mb-3 object-contain" aria-hidden="true" />
+            <h2 class="font-serif text-3xl sm:text-4xl text-forest font-semibold">Recipe</h2>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <article class="recipe-card group">
+            <div class="overflow-hidden">
+              <img
+                src="images/recipe-grill.png"
+                alt="Grilled shiitake mushrooms on a wooden board"
+                class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="recipe-card-body">
+              <h3 class="font-serif text-lg text-gray-800 text-center">Grill Shiitake Mushrooms</h3>
+            </div>
+          </article>
+          <article class="recipe-card group">
+            <div class="overflow-hidden">
+              <img
+                src="images/recipe-roast.png"
+                alt="Roasted shiitake mushrooms in a bowl"
+                class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="recipe-card-body">
+              <h3 class="font-serif text-lg text-gray-800 text-center">Roast Shiitake Mushrooms</h3>
+            </div>
+          </article>
+          <article class="recipe-card group sm:col-span-2 lg:col-span-1">
+            <div class="overflow-hidden">
+              <img
+                src="images/recipe-stir-fry.png"
+                alt="Stir fry with shiitake mushrooms and fresh vegetables"
+                class="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="recipe-card-body">
+              <h3 class="font-serif text-lg text-gray-800 text-center">Stir Fry Shiitake Mushrooms</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full py-12">
+      <div class="gallery-carousel shadow-sm rounded-lg overflow-hidden" data-flickity='{ 
+        "cellAlign": "left", 
+        "contain": true, 
+        "wrapAround": true, 
+        "autoPlay": 4000,
+        "groupCells": 4
+      }'>
+        <div class="carousel-cell">
+          <img src="images/gallery-5.png" alt="Gallery 1" class="w-full h-[450px] object-cover rounded shadow-md" />
+        </div>
+        <div class="carousel-cell">
+          <img src="images/gallery-6.png" alt="Gallery 2" class="w-full h-[450px] object-cover rounded shadow-md" />
+        </div>
+        <div class="carousel-cell">
+          <img src="images/gallery-7.png" alt="Gallery 3" class="w-full h-[450px] object-cover rounded shadow-md" />
+        </div>
+        <div class="carousel-cell">
+          <img src="images/gallery-8.png" alt="Gallery 4" class="w-full h-[450px] object-cover rounded shadow-md" />
+        </div>
+        <div class="carousel-cell">
+          <img src="images/gallery-1.png" alt="Gallery 5" class="w-full h-[450px] object-cover rounded shadow-md" />
+        </div>
+        <div class="carousel-cell">
+          <img src="images/gallery-2.png" alt="Gallery 6" class="w-full h-[450px] object-cover rounded shadow-md" />
+        </div>
+        <div class="carousel-cell">
+          <img src="images/gallery-3.png" alt="Gallery 7" class="w-full h-[450px] object-cover rounded shadow-md" />
+        </div>
+        <div class="carousel-cell">
+          <img src="images/gallery-4.png" alt="Gallery 8" class="w-full h-[450px] object-cover rounded shadow-md" />
+        </div>
+      </div>
+    </section>
+
+    <div id="articles" class="bg-terracotta py-4 px-4">
+      <h2 class="text-white text-center text-base sm:text-lg md:text-xl lg:text-2xl font-bold font-sans tracking-widest uppercase">
+        Articles
+      </h2>
+    </div>
+
+    <section class="py-12 lg:py-20 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <article class="article-card group">
+            <div class="overflow-hidden">
+              <img
+                src="images/article-1.png"
+                alt="Grilled mushroom skewers as a meat alternative"
+                class="w-full h-52 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="article-card-body">
+              <h3 class="font-serif text-base sm:text-lg text-gray-800">Shiitake Mushrooms as a Meat Alternative</h3>
+            </div>
+          </article>
+          <article class="article-card group">
+            <div class="overflow-hidden">
+              <img
+                src="images/article-2.png"
+                alt="Hands holding freshly harvested shiitake mushrooms"
+                class="w-full h-52 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="article-card-body">
+              <h3 class="font-serif text-base sm:text-lg text-gray-800">The History of Shiitake Mushrooms</h3>
+            </div>
+          </article>
+          <article class="article-card group sm:col-span-2 lg:col-span-1">
+            <div class="overflow-hidden">
+              <img
+                src="images/article-3.png"
+                alt="Nutritious vegan bowl with shiitake mushrooms and vegetables"
+                class="w-full h-52 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="article-card-body">
+              <h3 class="font-serif text-base sm:text-lg text-gray-800">A Delicious and Nutritious Vegan Choice</h3>
+            </div>
+          </article>
+        </div>
+        <div class="text-center mt-10 lg:mt-14">
+          <a href="pages/articles.html" class="btn-secondary">VIEW MORE</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="bg-forest text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8">
+        <div>
+          <h4 class="text-sm font-semibold tracking-widest uppercase mb-5">Quick Links</h4>
+          <ul class="space-y-2.5 text-sm text-white/85">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="pages/product.html" class="footer-link">Product</a></li>
+            <li><a href="pages/about.html" class="footer-link">About</a></li>
+            <li><a href="pages/contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold tracking-widest uppercase mb-5">Useful Info</h4>
+          <ul class="space-y-2.5 text-sm text-white/85">
+            <li><a href="pages/sample.html" class="footer-link">FAQ</a></li>
+            <li><a href="pages/articles.html" class="footer-link">Articles</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold tracking-widest uppercase mb-5">Contact Us</h4>
+          <ul class="space-y-2.5 text-sm text-white/85">
+            <li>Phone: <a href="tel:+13525594295" class="footer-link">(352) 559-4295</a></li>
+            <li>Email: <a href="mailto:sales@suwanneebellfarms.com" class="footer-link">sales@suwanneebellfarms.com</a></li>
+            <li>Web: <a href="https://suwanneebellfarms.com" class="footer-link">suwanneebellfarms.com</a></li>
+            <li>1509 SW 22 Ct. Bell, Florida 32619</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-white/70">Copyright 2026 &copy; Suwannee Bell Farms LLC</p>
+        <div class="flex items-center gap-3">
+          <span class="payment-badge">VISA</span>
+          <span class="payment-badge">MC</span>
+          <span class="payment-badge">AMEX</span>
+          <span class="payment-badge">PayPal</span>
+        </div>
+        <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
