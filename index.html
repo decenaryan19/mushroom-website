@@ -15,7 +15,7 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="index.html" class="site-logo" aria-label="Suwannee Bell Farms — Home">
-        <img src="images/logo.webp" alt="Suwannee Bell Farms logo" width="64" height="64" decoding="async">
+        <img src="images/logo.webp" alt="Suwannee Bell Farms logo" width="44" height="44" decoding="async">
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="index.html" class="is-active">HOME</a>
@@ -71,7 +71,7 @@
       </div>
     </section>
 
-    <div class="banner">
+    <div class="banner banner--product-intro">
       <h2>Organic Oak Log Forest Grown Shiitake Mushrooms</h2>
     </div>
 
@@ -100,7 +100,9 @@
     <section id="recipes" class="section section--white">
       <div class="container">
         <div class="section-head">
-          <img src="images/logo.webp" alt="" width="56" height="56" aria-hidden="true" loading="lazy" decoding="async">
+          <div class="logo-mark">
+            <img src="images/logo.webp" alt="" width="36" height="36" aria-hidden="true" loading="lazy" decoding="async">
+          </div>
           <h2 class="section-title">Recipe</h2>
         </div>
         <div class="card-grid card-grid--3">
@@ -133,17 +135,29 @@
     </section>
 
     <section class="gallery-section" aria-label="Farm gallery">
-      <div class="container gallery">
-        <button type="button" class="gallery__btn gallery__btn--prev" id="gallery-prev" aria-label="Previous images">
+      <div class="gallery-dots" id="gallery-dots" role="tablist" aria-label="Gallery pages">
+        <button type="button" class="gallery-dot is-active" data-page="0" role="tab" aria-selected="true" aria-label="Page 1"></button>
+        <button type="button" class="gallery-dot" data-page="1" role="tab" aria-selected="false" aria-label="Page 2"></button>
+      </div>
+      <div class="gallery-stage">
+        <button type="button" class="gallery__btn gallery__btn--prev" id="gallery-prev" aria-label="Previous page" disabled>
           <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         </button>
-        <div class="gallery__track" id="gallery-track">
-          <div class="gallery__item"><img src="images/gallery-5.webp" alt="Shiitake mushroom growing on an oak log" width="405" height="540" loading="lazy" decoding="async"></div>
-          <div class="gallery__item"><img src="images/gallery-6.webp" alt="Mushroom cluster on a forest log" width="405" height="540" loading="lazy" decoding="async"></div>
-          <div class="gallery__item"><img src="images/gallery-7.webp" alt="Oak logs arranged in the forest" width="405" height="540" loading="lazy" decoding="async"></div>
-          <div class="gallery__item"><img src="images/gallery-8.webp" alt="Farmer harvesting mushrooms in the forest" width="405" height="540" loading="lazy" decoding="async"></div>
+        <div id="gallery-pages">
+          <div class="gallery-page is-active" role="tabpanel">
+            <img src="images/gallery-1.webp" alt="Shiitake mushroom growing on a mossy oak log" width="480" height="640" loading="lazy" decoding="async">
+            <img src="images/gallery-2.webp" alt="Shiitake mushroom on a vertical oak log" width="480" height="640" loading="lazy" decoding="async">
+            <img src="images/gallery-3.webp" alt="Oak log rows in the forest at sunset" width="480" height="640" loading="lazy" decoding="async">
+            <img src="images/gallery-4.webp" alt="Farmer with freshly harvested shiitake mushrooms" width="480" height="640" loading="lazy" decoding="async">
+          </div>
+          <div class="gallery-page" role="tabpanel" hidden>
+            <img src="images/gallery-5.webp" alt="Close-up of shiitake on an oak log" width="480" height="640" loading="lazy" decoding="async">
+            <img src="images/gallery-6.webp" alt="Mushroom cluster on a forest log" width="480" height="640" loading="lazy" decoding="async">
+            <img src="images/gallery-7.webp" alt="Forest mushroom cultivation logs" width="480" height="640" loading="lazy" decoding="async">
+            <img src="images/gallery-8.webp" alt="Harvesting mushrooms in the forest" width="480" height="640" loading="lazy" decoding="async">
+          </div>
         </div>
-        <button type="button" class="gallery__btn gallery__btn--next" id="gallery-next" aria-label="Next images">
+        <button type="button" class="gallery__btn gallery__btn--next" id="gallery-next" aria-label="Next page">
           <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </button>
       </div>
@@ -153,7 +167,7 @@
       <h2>Articles</h2>
     </div>
 
-    <section class="section">
+    <section class="section product-section">
       <div class="container">
         <div class="card-grid card-grid--3">
           <article class="media-card">

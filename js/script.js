@@ -71,20 +71,36 @@ function initBackToTop() {
 }
 
 function initGallery() {
-  const track = document.getElementById('gallery-track');
+  const pages = document.querySelectorAll('.gallery-page');
+  const dots = document.querySelectorAll('.gallery-dot');
   const prev = document.getElementById('gallery-prev');
   const next = document.getElementById('gallery-next');
-  if (!track || !prev || !next) return;
+  if (!pages.length || !prev || !next) return;
 
-  function scrollByItem(direction) {
-    const item = track.querySelector('.gallery__item');
-    const gap = 16;
-    const amount = item ? item.getBoundingClientRect().width + gap : track.clientWidth;
-    track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+  let current = 0;
+
+  function showPage(index) {
+    current = Math.max(0, Math.min(index, pages.length - 1));
+    pages.forEach((page, i) => {
+      const isActive = i === current;
+      page.classList.toggle('is-active', isActive);
+      page.hidden = !isActive;
+    });
+    dots.forEach((dot, i) => {
+      const isActive = i === current;
+      dot.classList.toggle('is-active', isActive);
+      dot.setAttribute('aria-selected', String(isActive));
+    });
+    prev.disabled = current === 0;
+    next.disabled = current === pages.length - 1;
   }
 
-  prev.addEventListener('click', () => scrollByItem(-1));
-  next.addEventListener('click', () => scrollByItem(1));
+  prev.addEventListener('click', () => showPage(current - 1));
+  next.addEventListener('click', () => showPage(current + 1));
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => showPage(Number(dot.dataset.page)));
+  });
+  showPage(0);
 }
 
 function initProductPage() {

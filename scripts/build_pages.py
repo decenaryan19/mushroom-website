@@ -17,7 +17,7 @@ HEADER = """
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="../index.html" class="site-logo" aria-label="Suwannee Bell Farms — Home">
-        <img src="../images/logo.webp" alt="Suwannee Bell Farms logo" width="64" height="64" decoding="async">
+        <img src="../images/logo.webp" alt="Suwannee Bell Farms logo" width="52" height="52" decoding="async">
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="../index.html"{home_active}>HOME</a>
