@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroCarousel();
   initMobileMenu();
   initBackToTop();
-  initSmoothNavClose();
+  initGallery();
   initProductPage();
   initSampleForm();
   initContactForm();
@@ -17,11 +17,11 @@ function initHeroCarousel() {
   let intervalId = null;
 
   function goToSlide(index) {
-    slides[current].classList.remove('active');
-    dots[current]?.classList.remove('active');
+    slides[current].classList.remove('is-active');
+    dots[current]?.classList.remove('is-active');
     current = index;
-    slides[current].classList.add('active');
-    dots[current]?.classList.add('active');
+    slides[current].classList.add('is-active');
+    dots[current]?.classList.add('is-active');
   }
 
   function nextSlide() {
@@ -49,32 +49,42 @@ function initMobileMenu() {
   if (!btn || !menu) return;
 
   btn.addEventListener('click', () => {
-    const isOpen = !menu.classList.contains('hidden');
-    menu.classList.toggle('hidden');
+    const isOpen = menu.classList.contains('is-open');
+    menu.classList.toggle('is-open', !isOpen);
     btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
   });
 }
 
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
-
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
-function initSmoothNavClose() {
-  const menu = document.getElementById('mobile-menu');
-  const btn = document.getElementById('mobile-menu-btn');
-  if (!menu) return;
+function initGallery() {
+  const track = document.getElementById('gallery-track');
+  const prev = document.getElementById('gallery-prev');
+  const next = document.getElementById('gallery-next');
+  if (!track || !prev || !next) return;
 
-  menu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      btn?.setAttribute('aria-expanded', 'false');
-    });
-  });
+  function scrollByItem(direction) {
+    const item = track.querySelector('.gallery__item');
+    const gap = 16;
+    const amount = item ? item.getBoundingClientRect().width + gap : track.clientWidth;
+    track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+  }
+
+  prev.addEventListener('click', () => scrollByItem(-1));
+  next.addEventListener('click', () => scrollByItem(1));
 }
 
 function initProductPage() {
@@ -91,18 +101,16 @@ function initQuantitySelector() {
   if (!input || !minus || !plus) return;
 
   minus.addEventListener('click', () => {
-    const val = Math.max(1, parseInt(input.value, 10) - 1);
-    input.value = val;
+    input.value = Math.max(1, parseInt(input.value, 10) - 1);
   });
 
   plus.addEventListener('click', () => {
-    const val = Math.min(99, parseInt(input.value, 10) + 1);
-    input.value = val;
+    input.value = Math.min(99, parseInt(input.value, 10) + 1);
   });
 
   input.addEventListener('change', () => {
     let val = parseInt(input.value, 10);
-    if (isNaN(val) || val < 1) val = 1;
+    if (Number.isNaN(val) || val < 1) val = 1;
     if (val > 99) val = 99;
     input.value = val;
   });
@@ -115,17 +123,16 @@ function initProductTabs() {
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.tab;
-
       tabs.forEach((t) => {
-        t.classList.remove('active');
+        t.classList.remove('is-active');
         t.setAttribute('aria-selected', 'false');
       });
-      tab.classList.add('active');
+      tab.classList.add('is-active');
       tab.setAttribute('aria-selected', 'true');
 
       document.querySelectorAll('.product-tab-panel').forEach((panel) => {
         const isActive = panel.id === `tab-${target}`;
-        panel.classList.toggle('active', isActive);
+        panel.classList.toggle('is-active', isActive);
         panel.hidden = !isActive;
       });
     });
@@ -140,13 +147,13 @@ function initImageLightbox() {
   if (!lightbox || !expandBtn || !mainImage) return;
 
   expandBtn.addEventListener('click', () => {
-    lightbox.querySelector('img').src = mainImage.src;
-    lightbox.classList.remove('hidden');
+    lightbox.querySelector('img').src = mainImage.currentSrc || mainImage.src;
+    lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
   });
 
   function closeLightbox() {
-    lightbox.classList.add('hidden');
+    lightbox.hidden = true;
     document.body.style.overflow = '';
   }
 
@@ -155,7 +162,7 @@ function initImageLightbox() {
     if (e.target === lightbox) closeLightbox();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
+    if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
   });
 }
 
@@ -195,3 +202,4 @@ function initContactForm() {
     form.reset();
   });
 }
+

@@ -1,39 +1,60 @@
-# 🍄 Suwannee Hill Farms - Mushroom Landing Page
+# Suwannee Bell Farms — Mushroom Website
 
-A modern, responsive multi-page static website created for an organic mushroom farm. This project showcases "Organic Oak Log Forest Grown Shiitake Mushrooms," detailed product listings, gourmet recipes, a farm gallery, and educational articles.
+A high-performance static clone of [suwanneebellfarms.com](https://suwanneebellfarms.com/), built for **100 PageSpeed Insights** on mobile and desktop.
 
-The layout and design were carefully engineered using modern AI developer tools, adopting an organized multi-page routing system.
+## Design tokens
 
-## 🚀 Features
-- **Clean Folder Architecture:** Well-structured project dividing core pages, global stylesheets, scripts, and media assets.
-- **Fully Responsive Layout:** Optimized and beautifully rendered across Desktop, Tablet, and Mobile devices.
-- **Modern Tech Stack:** Built with semantic HTML5, Tailwind CSS (via CDN), and modular JavaScript scripts.
-- **Dynamic Content Sections:**
-  - High-quality hero banner slider featuring fresh mushrooms.
-  - Multi-column Product Highlight with an eye-catching 'Buy Now' call-to-action.
-  - Recipe grid showcasing various gourmet mushroom dishes.
-  - Interactive Farm Gallery and dedicated Articles/Blog space.
-  - Comprehensive multi-column Footer with Quick Links and Contact Information.
+| Token | Value |
+|-------|-------|
+| Cream background | `#fffdee` |
+| Terracotta accent | `#de7e3d` |
+| Forest green | `#3d7a3d` |
+| Headings | Playfair Display (self-hosted WOFF2) |
+| Body / UI | System UI stack (Type System) |
 
-## 🛠️ Tech Stack
-- **HTML5** - For semantic website structuring.
-- **Tailwind CSS** - For rapid, clean utility-first styling and component layout structure.
-- **Cursor AI** - Utilized as the core code editor and AI assistant.
-- **Cloudflare Pages** - Leveraged for fast, secure, and free global static hosting.
+## Performance architecture
 
-## 📂 Project Structure
-The repository is structured with a modular file routing hierarchy to keep codebase production-ready:
+- **No CDN frameworks** — removed Tailwind CDN and Flickity
+- **Self-hosted fonts** — Playfair Display only (~58 KB total); body uses `system-ui` (zero download)
+- **Optimized WebP images** — responsive hero with mobile variants, lazy loading below the fold
+- **Minimal JavaScript** — vanilla JS, deferred, no third-party scripts
+- **No render-blocking Google Fonts or Maps iframe** — contact page uses a static map link
+- **Cache headers** — `_headers` for long-lived static assets on Cloudflare Pages
+
+## Project structure
 
 ```text
-├── css/
-│   └── styles.css        # Global stylesheet alongside Tailwind overrides
-├── js/
-│   └── script.js         # Modular scripts for interactive features
-├── images/               # Media asset directory for logos and graphics
-├── pages/                # Sub-directory housing the internal site pages
-│   ├── about.html        # Company background and history
-│   ├── articles.html     # Educational blog entries and resources
-│   ├── contact.html      # Contact form, support details, and location map
-│   ├── product.html      # Detailed inventory and product specifications
-│   └── sample.html       # Request free sample page
-└── index.html            # The main landing page / root website homepage
+├── css/styles.css       # Single stylesheet
+├── fonts/               # Self-hosted Playfair Display
+├── images/              # Optimized WebP assets
+├── js/script.js         # Hero, gallery, mobile menu
+├── pages/               # Inner pages
+├── scripts/             # Asset fetch & build helpers
+├── _headers             # Cache policy
+└── index.html           # Homepage
+```
+
+## Local development
+
+```bash
+python -m http.server 8765
+```
+
+Open `http://localhost:8765`
+
+## Deploy
+
+Deploy the folder root to **Cloudflare Pages** (or any static host). Run PageSpeed Insights against your live URL after deploy.
+
+## Rebuild subpages
+
+```bash
+python scripts/build_pages.py
+```
+
+## Re-optimize images
+
+```bash
+python scripts/optimize_images.py
+python scripts/optimize_hero.py
+```

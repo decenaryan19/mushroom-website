@@ -1,122 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fresh Organic Oak Log Shiitake Mushrooms | Suwannee Bell Farms</title>
-  <meta name="description" content="Shop fresh organic oak log forest grown shiitake mushrooms from Suwannee Bell Farms. Hand-harvested, nutrient-rich, and full of umami flavor." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            terracotta: '#C4704A',
-            forest: '#3D7A3D',
-            cream: '#F9F8F3',
-            'forest-dark': '#2D5A2D',
-            'nav-active': '#E8F5E0',
-          },
-          fontFamily: {
-            serif: ['"Playfair Display"', 'Georgia', 'serif'],
-            sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/styles.css" />
+  <meta name="description" content="Shop fresh organic oak log forest grown shiitake mushrooms from Suwannee Bell Farms.">
+  <meta name="theme-color" content="#3d7a3d">
+  <link rel="preload" href="../css/styles.css" as="style">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="font-sans text-gray-800 bg-white antialiased">
+<body>
 
-  <!-- Header -->
- <header class="sticky top-0 z-50 shadow-sm" style="background-color: #fffdee;">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 lg:h-20">
-        <a href="../index.html" class="flex-shrink-0" aria-label="Suwannee Bell Farms — Home">
-          <img src="../images/logo.webp" alt="Suwannee Bell Farms — Oak Log Shiitake" class="h-14 w-14 lg:h-16 lg:w-16 object-contain" />
-        </a>
-
-        <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main navigation">
-          <a href="../index.html" class="nav-link">HOME</a>
-          <a href="product.html" class="border-2 border-[#4A7A4A] text-[#4A7A4A] px-5 py-1.5 rounded-full transition-all">PRODUCT</a>
-          <a href="articles.html" class="nav-link">ARTICLES</a>
-          <a href="about.html" class="nav-link">ABOUT</a>
-          <a href="sample.html" class="nav-link">REQUEST FREE SAMPLE</a>
-          <a href="contact.html" class="nav-link">CONTACT</a>
-        </nav>
-
-        <div class="flex items-center gap-3">
-          <button type="button" class="p-2 text-gray-600 hover:text-forest transition-colors" aria-label="Search">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-            </svg>
-          </button>
-          <button type="button" id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-forest transition-colors" aria-label="Open menu" aria-expanded="false">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-          </button>
-        </div>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="site-logo" aria-label="Suwannee Bell Farms — Home">
+        <img src="../images/logo.webp" alt="Suwannee Bell Farms logo" width="64" height="64" decoding="async">
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">HOME</a>
+        <a href="product.html" class="is-active">PRODUCT</a>
+        <a href="articles.html">ARTICLES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="sample.html">REQUEST FREE SAMPLE</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <div class="site-header__actions">
+        <button type="button" class="icon-btn" aria-label="Search">
+          <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </button>
+        <button type="button" id="mobile-menu-btn" class="icon-btn" aria-label="Open menu" aria-expanded="false">
+          <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </div>
     </div>
-
-    <nav id="mobile-menu" class="lg:hidden hidden border-t border-gray-100 bg-white" aria-label="Mobile navigation">
-      <div class="px-4 py-4 space-y-1">
-        <a href="../index.html" class="mobile-nav-link">HOME</a>
-        <a href="product.html" class="mobile-nav-link mobile-nav-link-active">PRODUCT</a>
-        <a href="articles.html" class="mobile-nav-link">ARTICLES</a>
-        <a href="about.html" class="mobile-nav-link">ABOUT</a>
-        <a href="sample.html" class="mobile-nav-link">REQUEST FREE SAMPLE</a>
-        <a href="contact.html" class="mobile-nav-link">CONTACT</a>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation">
+      <div class="mobile-nav__inner">
+        <a href="../index.html">HOME</a>
+        <a href="product.html" class="is-active">PRODUCT</a>
+        <a href="articles.html">ARTICLES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="sample.html">REQUEST FREE SAMPLE</a>
+        <a href="contact.html">CONTACT</a>
       </div>
     </nav>
   </header>
-
   <main>
-    <!-- Product Hero -->
-    <section class="py-10 lg:py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-start">
-          <!-- Product Image -->
+
+    <section class="section section--white">
+      <div class="container">
+        <div class="product-layout">
           <div class="product-page-image">
-            <img
-              id="product-main-image"
-              src="../images/product.webp"
-              alt="Fresh organic shiitake mushrooms in a white bowl on a wooden surface"
-              class="w-full aspect-square object-cover"
-            />
+            <img id="product-main-image" src="../images/product.webp" alt="Fresh organic shiitake mushrooms in a white bowl" width="600" height="800" loading="eager" decoding="async">
             <button type="button" id="expand-image-btn" class="product-expand-btn" aria-label="Expand image">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
-              </svg>
+              <svg aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
             </button>
           </div>
-
-          <!-- Product Info -->
           <div>
-            <h1 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-forest leading-snug mb-4">
-              Fresh Organic Oak Log Shiitake Mushrooms: A Taste of the Forest
-            </h1>
-            <p class="text-lg sm:text-xl font-bold text-gray-900 mb-4">$25.00 – $250.00</p>
-            <p class="text-terracotta leading-relaxed mb-6">
-              Experience the rich, earthy flavor of our premium shiitake mushrooms, cultivated on sustainably harvested oak logs in the heart of the forest. Each mushroom is hand-picked at peak maturity for maximum flavor and nutrition.
-            </p>
-            <ul class="space-y-2 text-sm text-gray-700 mb-8 list-disc list-inside">
-              <li>Harvested at their peak for optimal flavor and texture</li>
-              <li>Large, meaty caps with a distinctive cracked pattern</li>
-              <li>Rich in umami — perfect for grilling, roasting, and stir-frying</li>
-              <li>Certified organic, forest-grown on oak logs</li>
-              <li>Shipped fresh within 24 hours of harvest</li>
-            </ul>
-
-            <form class="space-y-5" id="product-form">
+            <h1 class="section-title">Fresh Organic Oak Log Shiitake Mushrooms: A Taste of the Forest</h1>
+            <p class="product-price">$25.00 – $250.00</p>
+            <p style="color:var(--terracotta);margin-bottom:1.5rem;">Experience the rich, earthy flavor of our premium shiitake mushrooms, cultivated on sustainably harvested oak logs in the heart of the forest.</p>
+            <form id="product-form" class="form-grid">
               <div>
-                <label for="package-select" class="block text-sm font-semibold text-gray-800 mb-2">Packages</label>
-                <select id="package-select" class="product-select w-full">
+                <label for="package-select" class="form-label">Packages</label>
+                <select id="package-select" class="product-select">
                   <option value="">Choose an option</option>
                   <option value="half-pound">Half Pound — $25.00</option>
                   <option value="one-pound">One Pound — $45.00</option>
@@ -125,157 +71,60 @@
                   <option value="ten-pound">Ten Pounds — $250.00</option>
                 </select>
               </div>
-
-              <div class="flex flex-wrap items-center gap-4">
-                <div class="flex items-center border border-gray-300">
+              <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;">
+                <div class="qty-row">
                   <button type="button" id="qty-minus" class="qty-btn" aria-label="Decrease quantity">−</button>
-                  <input type="number" id="qty-input" value="1" min="1" max="99" class="qty-input" aria-label="Quantity" />
+                  <input type="number" id="qty-input" value="1" min="1" max="99" class="qty-input" aria-label="Quantity">
                   <button type="button" id="qty-plus" class="qty-btn" aria-label="Increase quantity">+</button>
                 </div>
-                <button type="submit" class="btn-buy-now flex-1 sm:flex-none">BUY NOW</button>
+                <button type="submit" class="btn btn--terracotta">Buy Now</button>
               </div>
             </form>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Product Tabs -->
-    <section class="pb-16 lg:pb-24 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="product-tabs border-b border-gray-200" role="tablist">
-          <button type="button" class="product-tab active" role="tab" aria-selected="true" data-tab="description">DESCRIPTION</button>
-          <button type="button" class="product-tab" role="tab" aria-selected="false" data-tab="additional">ADDITIONAL INFORMATION</button>
-          <button type="button" class="product-tab" role="tab" aria-selected="false" data-tab="reviews">REVIEWS (0)</button>
+    <section class="section section--white">
+      <div class="container">
+        <div class="product-tabs" role="tablist">
+          <button type="button" class="product-tab is-active" role="tab" aria-selected="true" data-tab="description">Description</button>
+          <button type="button" class="product-tab" role="tab" aria-selected="false" data-tab="additional">Additional Information</button>
+          <button type="button" class="product-tab" role="tab" aria-selected="false" data-tab="reviews">Reviews (0)</button>
         </div>
-
-        <!-- Description Tab -->
-        <div id="tab-description" class="product-tab-panel active" role="tabpanel">
-          <h2 class="text-xl font-semibold text-forest mb-6">Fresh Organic Oak Log Shiitake Mushrooms</h2>
-
-          <div class="space-y-6 text-gray-700 leading-relaxed max-w-4xl">
-            <p>
-              Our shiitake mushrooms are grown using the traditional Japanese method of log cultivation — a time-honored practice that produces mushrooms of exceptional quality, flavor, and nutritional value. Each mushroom emerges from sustainably harvested oak logs placed in our forest shade house, where natural humidity and temperature create the perfect growing conditions.
-            </p>
-
-            <div>
-              <h3 class="text-lg font-semibold text-forest mb-3">Unveil the Essence of Shiitake Mushrooms</h3>
-              <p>
-                Shiitake mushrooms (Lentinula edodes) have been prized for centuries in Asian cuisine for their rich, savory umami flavor and meaty texture. Our forest-grown shiitakes develop a distinctive cracked cap pattern — a sign of high-quality "donko" mushrooms that connoisseurs seek out for their concentrated flavor.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-semibold text-forest mb-3">Nurtured by Nature's Embrace</h3>
-              <p>
-                Unlike commercially grown mushrooms on synthetic substrates, our shiitakes grow slowly on whole oak logs over 8–12 months. This natural process allows the mycelium to fully colonize the wood, drawing nutrients that translate into superior taste and texture. No pesticides, no artificial growing mediums — just oak, water, and forest air.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-semibold text-forest mb-3">A Masterpiece of Flavors and Nutrients</h3>
-              <p class="mb-3">Our shiitake mushrooms are naturally rich in:</p>
-              <ul class="list-disc list-inside space-y-1 ml-2">
-                <li>Vitamin D (especially when sun-exposed before harvest)</li>
-                <li>B vitamins (B2, B3, B5, B6, and B9)</li>
-                <li>Copper, selenium, and zinc</li>
-                <li>Beta-glucans and lentinan polysaccharides</li>
-                <li>Dietary fiber and plant-based protein</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-semibold text-forest mb-3">Embark on a Culinary Adventure</h3>
-              <p>
-                Whether you're grilling them with a simple brush of olive oil and sea salt, roasting them until caramelized and crispy, or adding them to a vibrant stir-fry, our shiitake mushrooms elevate every dish. Their meaty texture makes them an excellent plant-based alternative in burgers, tacos, and pasta dishes.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-semibold text-forest mb-3">Additional Benefits</h3>
-              <ul class="list-disc list-inside space-y-1 ml-2">
-                <li>Low in calories and fat</li>
-                <li>Rich in antioxidants</li>
-                <li>Supports immune health</li>
-                <li>May help maintain healthy cholesterol levels</li>
-                <li>Sustainably grown with minimal environmental impact</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-semibold text-forest mb-3">Choose a Package:</h3>
-              <ul class="list-disc list-inside space-y-1 ml-2">
-                <li><strong>Half Pound</strong> — Perfect for trying our mushrooms for the first time</li>
-                <li><strong>One Pound</strong> — Ideal for a family meal or small gathering</li>
-                <li><strong>Two Pounds</strong> — Great for meal prep and regular cooking</li>
-                <li><strong>Five Pounds</strong> — Best value for restaurants and avid home cooks</li>
-                <li><strong>Ten Pounds</strong> — Bulk option for chefs and food enthusiasts</li>
-              </ul>
-            </div>
+        <div id="tab-description" class="product-tab-panel is-active" role="tabpanel">
+          <h2 class="section-title" style="font-size:1.25rem;">Fresh Organic Oak Log Shiitake Mushrooms</h2>
+          <div class="prose">
+            <p>Our shiitake mushrooms are grown using the traditional Japanese method of log cultivation — a time-honored practice that produces mushrooms of exceptional quality, flavor, and nutritional value.</p>
+            <p>Shiitake mushrooms (Lentinula edodes) have been prized for centuries in Asian cuisine for their rich, savory umami flavor and meaty texture.</p>
           </div>
         </div>
-
-        <!-- Additional Information Tab -->
         <div id="tab-additional" class="product-tab-panel" role="tabpanel" hidden>
-          <div class="max-w-4xl space-y-4 text-gray-700">
-            <table class="product-info-table w-full text-sm">
-              <tbody>
-                <tr>
-                  <th>Weight</th>
-                  <td>0.5 lb, 1 lb, 2 lb, 5 lb, 10 lb</td>
-                </tr>
-                <tr>
-                  <th>Dimensions</th>
-                  <td>Varies by package size</td>
-                </tr>
-                <tr>
-                  <th>Ingredients</th>
-                  <td>100% Organic Shiitake Mushrooms (Lentinula edodes)</td>
-                </tr>
-                <tr>
-                  <th>Growing Method</th>
-                  <td>Oak log forest cultivation</td>
-                </tr>
-                <tr>
-                  <th>Certification</th>
-                  <td>USDA Certified Organic</td>
-                </tr>
-                <tr>
-                  <th>Storage</th>
-                  <td>Refrigerate in a paper bag for up to 10 days; or dry/dehydrate for long-term storage</td>
-                </tr>
-                <tr>
-                  <th>Origin</th>
-                  <td>Suwannee Valley, Florida, USA</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <table class="product-info-table">
+            <tbody>
+              <tr><th>Weight</th><td>0.5 lb, 1 lb, 2 lb, 5 lb, 10 lb</td></tr>
+              <tr><th>Ingredients</th><td>100% Organic Shiitake Mushrooms (Lentinula edodes)</td></tr>
+              <tr><th>Growing Method</th><td>Oak log forest cultivation</td></tr>
+              <tr><th>Origin</th><td>Suwannee Valley, Florida, USA</td></tr>
+            </tbody>
+          </table>
         </div>
-
-        <!-- Reviews Tab -->
         <div id="tab-reviews" class="product-tab-panel" role="tabpanel" hidden>
-          <div class="max-w-4xl py-6 text-gray-600">
-            <p>There are no reviews yet. Be the first to review "Fresh Organic Oak Log Shiitake Mushrooms."</p>
-          </div>
+          <p style="color:var(--text-muted);padding:1.5rem 0;">There are no reviews yet. Be the first to review our shiitake mushrooms.</p>
         </div>
       </div>
     </section>
+    <div id="image-lightbox" class="image-lightbox" role="dialog" aria-label="Product image preview" hidden>
+      <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close preview">&times;</button>
+      <img src="../images/product.webp" alt="Fresh organic shiitake mushrooms enlarged view" width="600" height="800">
+    </div>
   </main>
 
-  <!-- Image Lightbox -->
-  <div id="image-lightbox" class="image-lightbox hidden" role="dialog" aria-label="Product image preview">
-    <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close preview">&times;</button>
-    <img src="../images/product.webp" alt="Fresh organic shiitake mushrooms enlarged view" />
-  </div>
-
-  <!-- Footer -->
-  <footer id="contact" class="bg-forest text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8">
+  <footer class="site-footer">
+    <div class="container site-footer__main">
+      <div class="footer-grid">
         <div>
-          <h4 class="text-sm font-semibold tracking-widest uppercase mb-5">Quick Links</h4>
-          <ul class="space-y-2.5 text-sm text-white/85">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
             <li><a href="../index.html" class="footer-link">Home</a></li>
             <li><a href="product.html" class="footer-link">Product</a></li>
             <li><a href="about.html" class="footer-link">About</a></li>
@@ -283,15 +132,15 @@
           </ul>
         </div>
         <div>
-          <h4 class="text-sm font-semibold tracking-widest uppercase mb-5">Useful Info</h4>
-          <ul class="space-y-2.5 text-sm text-white/85">
+          <h4 class="footer-heading">Useful Info</h4>
+          <ul class="footer-links">
             <li><a href="sample.html" class="footer-link">FAQ</a></li>
             <li><a href="articles.html" class="footer-link">Articles</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-sm font-semibold tracking-widest uppercase mb-5">Contact Us</h4>
-          <ul class="space-y-2.5 text-sm text-white/85">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-links">
             <li>Phone: <a href="tel:+13525594295" class="footer-link">(352) 559-4295</a></li>
             <li>Email: <a href="mailto:sales@suwanneebellfarms.com" class="footer-link">sales@suwanneebellfarms.com</a></li>
             <li>Web: <a href="https://suwanneebellfarms.com" class="footer-link">suwanneebellfarms.com</a></li>
@@ -300,24 +149,21 @@
         </div>
       </div>
     </div>
-    <div class="border-t border-white/20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-white/70">Copyright 2026 &copy; Suwannee Bell Farms LLC</p>
-        <div class="flex items-center gap-3">
+    <div class="site-footer__bar">
+      <div class="container footer-bar-inner">
+        <p class="footer-copy">Copyright 2026 &copy; Suwannee Bell Farms LLC</p>
+        <div class="payment-badges" aria-label="Accepted payment methods">
           <span class="payment-badge">VISA</span>
           <span class="payment-badge">MC</span>
           <span class="payment-badge">AMEX</span>
           <span class="payment-badge">PayPal</span>
         </div>
         <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
-          </svg>
+          <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
         </button>
       </div>
     </div>
   </footer>
-
-  <script src="../js/script.js"></script>
+  <script src="../js/script.js" defer></script>
 </body>
 </html>
