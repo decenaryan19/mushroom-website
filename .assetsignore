@@ -1,0 +1,24 @@
+# Git metadata — must never be uploaded as static assets
+.git
+**/.git
+**/.git/**
+
+# Unoptimized originals from fetch script
+images/raw
+images/raw/**
+
+# Full-size PNG sources (site serves WebP only)
+**/*.png
+
+# Dev / build tooling
+scripts
+scripts/**
+.vscode
+.vscode/**
+
+# Python
+**/__pycache__
+**/*.pyc
+
+# Local reports
+lighthouse*.json
