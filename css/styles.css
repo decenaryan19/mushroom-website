@@ -34,10 +34,11 @@
 
 :root {
   --cream: #fffdee;
-  --terracotta: #b45b1b;
+  --terracotta: #8a3d10;
+  --terracotta-text: #7a350d;
   --forest: #336f1b;
   --forest-dark: #285815;
-  --footer: #3f7f17;
+  --footer: #1f4d0a;
   --text: #1f2937;
   --text-muted: #4b5563;
   --white: #fff;
@@ -320,7 +321,7 @@ p {
   bottom: 1.5rem;
   transform: translateX(-50%);
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .hero-dot {
@@ -430,7 +431,7 @@ p {
 }
 
 .btn--terracotta:hover {
-  opacity: 0.92;
+  background: #6f3209;
 }
 
 /* Product intro */
@@ -560,22 +561,34 @@ p {
   display: none;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   padding: 0.85rem 0 0.65rem;
 }
 
 .gallery-dot {
+  position: relative;
   width: 2.75rem;
-  height: 0.3rem;
+  min-height: 2.75rem;
   padding: 0;
   border: 0;
   border-radius: 0;
-  background: #d9d9d9;
+  background: transparent;
   cursor: pointer;
+}
+
+.gallery-dot::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 0.3rem;
+  transform: translateY(-50%);
+  background: #d9d9d9;
   transition: background 0.2s;
 }
 
-.gallery-dot.is-active {
+.gallery-dot.is-active::before {
   background: var(--terracotta);
 }
 
@@ -664,6 +677,7 @@ p {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 0.85rem;
+  color: var(--white);
 }
 
 .footer-links {
@@ -672,6 +686,10 @@ p {
   font-family: var(--font-sans);
   font-size: 0.8125rem;
   line-height: 1.4;
+  color: var(--white);
+}
+
+.footer-links li {
   color: var(--white);
 }
 
@@ -709,12 +727,13 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.5rem;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.625rem;
+  min-width: 2.75rem;
+  min-height: 2rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  background: rgba(0, 0, 0, 0.18);
+  background: #142f08;
   border-radius: 0.25rem;
   color: var(--white);
 }
@@ -860,7 +879,7 @@ p {
 .sample-note {
   margin-top: 2rem;
   text-align: center;
-  color: var(--terracotta);
+  color: var(--terracotta-text);
   font-weight: 500;
 }
 
@@ -1263,9 +1282,10 @@ body {
 .banner h1,
 .banner h2,
 .banner p {
+  color: var(--white);
   font-family: var(--font-sans);
   font-size: clamp(1.25rem, 2.5vw, 2rem);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.2;
 }
@@ -1276,8 +1296,9 @@ body {
 
 .banner--product-intro h2 {
   font-size: clamp(1.5rem, 2.7vw, 2rem);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0;
+  color: var(--white);
 }
 
 .section {
@@ -1429,6 +1450,7 @@ body {
 .footer-heading {
   font-size: 1rem;
   letter-spacing: 0;
+  color: var(--white);
 }
 
 .footer-links {
@@ -1580,7 +1602,7 @@ body {
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.4;
-  color: var(--terracotta);
+  color: var(--terracotta-text);
   margin-bottom: 0.75rem;
 }
 
@@ -1892,7 +1914,7 @@ body {
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   font-weight: 500;
   text-align: center;
-  color: var(--terracotta);
+  color: var(--terracotta-text);
   margin: 1.25rem 0 0;
 }
 
