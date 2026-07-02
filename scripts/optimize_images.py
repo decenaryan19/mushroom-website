@@ -22,6 +22,8 @@ PRIMARY = {
     "hero-2.webp": (1280, 720, 46),
     "hero-1-mobile.webp": (640, 360, 42),
     "hero-2-mobile.webp": (640, 360, 42),
+    "hero-1-small.webp": (520, 293, 40),
+    "hero-2-small.webp": (520, 293, 40),
     "product.webp": (600, 800, 62),
     "recipe-grill.webp": (533, 367, 56),
     "recipe-roast.webp": (533, 367, 56),
