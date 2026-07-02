@@ -32,6 +32,14 @@
   src: url("../fonts/libre-baskerville-v24-latin-regular.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/libre-franklin-v20-latin-500.ttf") format("truetype");
+}
+
 :root {
   --cream: #fffdee;
   --terracotta: #de7e3d;
@@ -1164,5 +1172,859 @@ textarea:focus-visible {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Home.htm parity overrides */
+body {
+  font-size: 100%;
+  color: #2b2b2b;
+  background: var(--cream);
+}
+
+.container {
+  width: min(100% - 1.875rem, 1250px);
+}
+
+.site-header {
+  background: var(--cream);
+}
+
+.site-header__inner {
+  min-height: 70px;
+}
+
+.site-logo {
+  width: 70px;
+  height: 70px;
+}
+
+.site-nav {
+  gap: 1.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.site-nav a {
+  color: #000;
+  line-height: 25px;
+  padding: 0.35rem 0;
+}
+
+.site-nav a.is-active {
+  border-radius: 0;
+  padding: 0.35rem 0.8rem;
+  background: var(--footer);
+  color: #fff;
+}
+
+.hero-slide img {
+  height: 60vw;
+  max-height: 600px;
+  object-position: center;
+}
+
+.hero__overlay {
+  background: transparent;
+}
+
+.hero__dots {
+  bottom: 1rem;
+}
+
+.hero-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+}
+
+.btn {
+  min-height: 2.4rem;
+  padding: 0 1.2rem;
+  font-size: 0.97rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  border-radius: 0;
+}
+
+.btn--outline-light {
+  border-width: 2px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  padding: 0.75rem 1rem;
+  background: #dc7e32;
+}
+
+.banner h1,
+.banner h2,
+.banner p {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.banner--product-intro {
+  min-height: 70px;
+}
+
+.banner--product-intro h2 {
+  font-size: clamp(1.5rem, 2.7vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.section {
+  padding: 20px 0;
+}
+
+.product-section {
+  background-color: rgba(255, 253, 238, 0.762);
+  background-image:
+    radial-gradient(ellipse at 0% 100%, rgba(222, 126, 50, 0.1) 0%, transparent 42%),
+    radial-gradient(ellipse at 100% 0%, rgba(81, 153, 30, 0.08) 0%, transparent 40%);
+}
+
+.grid-2 {
+  gap: 30px;
+}
+
+#product .section-title {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--footer);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+#product .prose {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2b2b2b;
+}
+
+#product .prose p {
+  margin: 0 0 0.45rem;
+}
+
+#product .prose p:nth-child(2),
+#product .prose p:nth-child(4),
+#product .prose p:nth-child(5) {
+  margin-bottom: 1.05rem;
+}
+
+.product-image-wrap {
+  max-width: none;
+}
+
+.product-image-wrap img {
+  aspect-ratio: auto;
+  max-height: none;
+}
+
+.section--white {
+  background: rgba(255, 255, 255, 0.924);
+}
+
+.section-head {
+  margin-bottom: 1rem;
+}
+
+.logo-mark {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0.15rem;
+}
+
+.section-head .section-title {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--footer);
+}
+
+.card-grid {
+  gap: 19.6px;
+}
+
+.media-card {
+  padding: 5px;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.media-card__image img {
+  aspect-ratio: 10 / 7;
+}
+
+.media-card__body {
+  padding: 0.7rem 0.45rem 0.65rem;
+  border: 0;
+}
+
+.media-card__title {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: 1.17rem;
+  font-weight: 500;
+  color: var(--footer);
+  line-height: 1.3;
+}
+
+.gallery-section {
+  padding: 0;
+  background: var(--cream);
+}
+
+.gallery-stage {
+  padding: 0 9.8px;
+}
+
+.gallery-page {
+  gap: 19.6px;
+}
+
+.gallery-page img {
+  height: clamp(12rem, 33vw, 31rem);
+  aspect-ratio: 3 / 4;
+}
+
+#articles.banner {
+  min-height: 80px;
+}
+
+#articles + .product-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.text-center.mt-10 .btn {
+  width: min(100%, 18rem);
+  background: #dc7e32;
+}
+
+.site-footer {
+  background: var(--footer);
+}
+
+.site-footer__main {
+  padding: 2.5rem 0 2rem;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+.footer-links {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+@media (min-width: 850px) {
+  .site-header__inner {
+    min-height: 90px;
+  }
+
+  .site-logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .hero-slide img {
+    height: 600px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-image-wrap {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-2 {
+    gap: 30px;
+  }
+
+  .product-image-wrap {
+    max-width: none;
+  }
+
+  .card-grid--3 {
+    gap: 19.6px;
+  }
+
+  .gallery-page img {
+    height: clamp(18rem, 31vw, 31rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .banner h1,
+  .banner h2,
+  .banner p {
+    font-size: 1.25rem;
+  }
+
+  .gallery-stage {
+    padding: 0 4.9px;
+  }
+
+  .gallery-page {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9.8px;
+  }
+
+  .gallery-page img {
+    height: auto;
+  }
+}
+
+/* Product page parity with WooCommerce export */
+.product-main-section {
+  background: var(--white);
+  padding: 30px 0;
+}
+
+.product-layout--single {
+  align-items: start;
+  gap: 30px;
+}
+
+.product-layout--single .product-page-image {
+  background: var(--white);
+  overflow: visible;
+}
+
+.product-layout--single .product-page-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.product-summary {
+  color: #2b2b2b;
+}
+
+.product-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.product-breadcrumb a {
+  color: #777;
+}
+
+.product-breadcrumb a:hover {
+  color: var(--footer);
+}
+
+.product-title {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--footer);
+  margin-bottom: 0.65rem;
+}
+
+.is-divider.small {
+  width: 30px;
+  height: 3px;
+  margin: 1rem 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 1rem;
+}
+
+.product-short-description {
+  margin-bottom: 1.35rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.product-short-description h4 {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #dc7e32;
+  margin-bottom: 0.75rem;
+}
+
+.product-short-description ul {
+  list-style: disc;
+  padding-left: 1.35rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.variations-form {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.variations {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.variations th,
+.variations td {
+  padding: 0.35rem 0;
+  vertical-align: middle;
+}
+
+.variations .label {
+  width: 6.5rem;
+  text-align: left;
+  font-weight: 700;
+  color: #2b2b2b;
+}
+
+.variations .value {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.product-select {
+  min-width: 13rem;
+  height: 2.5rem;
+  padding: 0 2rem 0 0.75rem;
+  border: 1px solid #ddd;
+  background-color: var(--white);
+  font-size: 0.95rem;
+}
+
+.reset-variations {
+  font-size: 0.82rem;
+  color: #777;
+  visibility: hidden;
+}
+
+.single-variation-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.qty-row {
+  border: 1px solid #ddd;
+  height: 2.5rem;
+}
+
+.qty-btn {
+  width: 2.35rem;
+  height: 2.35rem;
+  background: #f9f9f9;
+}
+
+.qty-input {
+  height: 2.35rem;
+}
+
+.single-add-to-cart {
+  min-height: 2.5rem;
+  background: #dc7e32;
+  padding-inline: 1.4rem;
+}
+
+.product-footer-section {
+  background: var(--white);
+  padding: 0 0 36px;
+}
+
+.product-tabs {
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid #ececec;
+}
+
+.product-tab {
+  padding: 0.8rem 1rem 0.75rem 0;
+  margin-right: 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: rgba(17, 17, 17, 0.55);
+}
+
+.product-tab.is-active {
+  color: #111;
+  border-bottom-color: var(--footer);
+}
+
+.tab-panels {
+  max-width: 100%;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #2b2b2b;
+}
+
+.product-description h4 {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--footer);
+  margin: 0 0 0.7rem;
+}
+
+.product-description p {
+  margin: 0 0 1rem;
+}
+
+.product-info-table th,
+.product-info-table td {
+  border-bottom: 1px solid #ececec;
+  padding: 0.75rem 0;
+}
+
+.reviews-panel h3 {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-weight: 500;
+  color: var(--footer);
+  margin-bottom: 1rem;
+}
+
+.review-form-inner {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 2px solid #ececec;
+}
+
+@media (min-width: 1024px) {
+  .product-layout--single {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .product-layout--single .product-page-image img {
+    min-height: 595px;
+  }
+}
+
+/* About page parity with exported Flatsome page */
+.banner--about {
+  min-height: 70px;
+  background: var(--footer);
+}
+
+.banner--about h1 {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.about-original-section {
+  position: relative;
+  padding: 30px 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.89), rgba(255, 255, 255, 0.89)),
+    url("../images/about-bg.webp") 46% 0% / cover no-repeat;
+}
+
+.about-original-card {
+  width: min(100%, 1145px);
+  margin-inline: auto;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 1px 3px -2px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.about-original-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2b2b2b;
+}
+
+.about-original-content p {
+  margin: 0 0 1rem;
+}
+
+.about-original-content strong {
+  font-weight: 700;
+}
+
+@media (min-width: 550px) {
+  .about-original-card {
+    padding: 20px;
+  }
+}
+
+/* Request sample page parity */
+.banner--request-sample {
+  min-height: 80px;
+  background: #dc7e32;
+}
+
+.banner--request-sample h1 {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.request-sample-section {
+  padding: 20px 0;
+  background:
+    linear-gradient(rgba(255, 253, 238, 0.762), rgba(255, 253, 238, 0.762)),
+    url("../images/section-bg.webp") center / cover no-repeat;
+}
+
+.request-copy,
+.request-form {
+  width: min(100%, 820px);
+  margin-inline: auto;
+}
+
+.request-copy {
+  color: #2b2b2b;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.request-copy p {
+  margin: 0 0 0.35rem;
+}
+
+.request-copy p:nth-child(1),
+.request-copy p:nth-child(4),
+.request-copy p:nth-child(10),
+.request-copy p:nth-child(12) {
+  margin-bottom: 1rem;
+}
+
+.request-form {
+  display: block;
+  color: #2b2b2b;
+}
+
+.request-form p {
+  margin: 0 0 1rem;
+}
+
+.request-form label {
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.request-form input,
+.request-form textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  background: var(--white);
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  color: #2b2b2b;
+}
+
+.request-form input {
+  min-height: 2.5rem;
+}
+
+.request-form textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.request-submit {
+  background: var(--footer);
+  color: var(--white);
+  min-height: 2.5rem;
+  padding-inline: 1.35rem;
+}
+
+.sample-note-original {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 500;
+  text-align: center;
+  color: #dc7e32;
+  margin: 1.25rem 0 0;
+}
+
+@media (min-width: 850px) {
+  .banner--request-sample {
+    min-height: 70px;
+  }
+}
+
+/* Contact page parity */
+.banner--contact {
+  min-height: 70px;
+  background: var(--footer);
+}
+
+.banner--contact h1 {
+  font-family: "Libre Franklin", var(--font-sans);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.contact-original-section {
+  padding: 30px 0;
+  background:
+    linear-gradient(rgba(255, 253, 238, 0.977), rgba(255, 253, 238, 0.977)),
+    url("../images/contact-values-card.webp") center / cover no-repeat;
+}
+
+.contact-card-row,
+.contact-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 19.6px;
+  align-items: start;
+}
+
+.contact-card-row {
+  margin-bottom: 19.6px;
+}
+
+.contact-card-image {
+  overflow: hidden;
+  background: var(--white);
+}
+
+.contact-card-image img {
+  width: 100%;
+  aspect-ratio: 1805 / 1055;
+  object-fit: cover;
+}
+
+.contact-original-form {
+  color: #2b2b2b;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contact-original-form p {
+  margin: 0 0 1rem;
+}
+
+.contact-original-form label {
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.contact-original-form input,
+.contact-original-form textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  background: var(--white);
+  padding: 0.65rem 0.75rem;
+  color: #2b2b2b;
+  font: inherit;
+}
+
+.contact-original-form input {
+  min-height: 2.5rem;
+}
+
+.contact-original-form textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.contact-submit {
+  min-height: 2.5rem;
+  padding-inline: 1.35rem;
+  background: var(--footer);
+  color: var(--white);
+}
+
+.contact-map-facade {
+  position: relative;
+  display: block;
+  min-height: 450px;
+  overflow: hidden;
+  background: #e7eadf;
+}
+
+.contact-map-facade img {
+  width: 100%;
+  min-height: 450px;
+  object-fit: cover;
+  filter: saturate(0.68) contrast(0.88) brightness(1.08);
+}
+
+.contact-map-facade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.72), transparent 42%),
+    repeating-linear-gradient(0deg, transparent 0 58px, rgba(81, 153, 30, 0.18) 59px 61px),
+    repeating-linear-gradient(90deg, transparent 0 78px, rgba(81, 153, 30, 0.14) 79px 81px);
+}
+
+.contact-map-facade__panel {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: grid;
+  gap: 0.35rem;
+  width: min(88%, 18rem);
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+  color: #2b2b2b;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.contact-map-facade__panel strong {
+  color: #111;
+}
+
+.contact-map-facade__cta {
+  width: max-content;
+  margin-top: 0.35rem;
+  padding: 0.45rem 0.7rem;
+  background: var(--footer);
+  color: var(--white);
+  font-weight: 700;
+}
+
+@media (min-width: 850px) {
+  .contact-card-row,
+  .contact-bottom-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

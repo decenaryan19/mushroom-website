@@ -6,15 +6,19 @@
   <title>Contact Us | Suwannee Bell Farms</title>
   <meta name="description" content="Contact Suwannee Bell Farms — Robert Ledek, Farmer. Phone (352) 559-4295. Bell, Florida.">
   <meta name="theme-color" content="#3d7a3d">
-  <link rel="preload" href="../css/styles.css" as="style">
-  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#fffdee;color:#1f2937}
+    .site-header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  </style>
+  <link rel="preload" href="../css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
 </head>
 <body>
 
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="../index.html" class="site-logo" aria-label="Suwannee Bell Farms — Home">
-        <img src="../images/logo.webp" alt="Suwannee Bell Farms logo" width="52" height="52" decoding="async">
+        <img src="../images/logo.webp" alt="Suwannee Bell Farms logo" width="44" height="44" decoding="async">
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="../index.html">HOME</a>
@@ -46,23 +50,52 @@
   </header>
   <main>
 
-    <div class="banner banner--forest">
-      <h1>Contact Us</h1>
+    <div class="banner banner--contact">
+      <h1><b>Contact Us</b></h1>
     </div>
-    <section class="section">
+    <section class="contact-original-section">
       <div class="container">
-        <div class="contact-cards">
-          <img src="../images/contact-values-card.webp" alt="Suwannee Bell Farms values — Fresh, Local, Organic, Sustainable" width="685" height="400" loading="lazy" decoding="async">
-          <img src="../images/contact-business-card.webp" alt="Robert Ledek, Farmer — Suwannee Bell Farms contact card" width="685" height="400" loading="lazy" decoding="async">
+        <div class="contact-card-row">
+          <div class="contact-card-image">
+            <img src="../images/contact-values-card.webp" alt="Fresh, local, organic, sustainable values from Suwannee Bell Farms" width="684" height="400" fetchpriority="high" decoding="async">
+          </div>
+          <div class="contact-card-image">
+            <img src="../images/contact-business-card.webp" alt="Robert Ledek, Farmer — Suwannee Bell Farms business card" width="684" height="400" loading="lazy" decoding="async">
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <a id="map-facade" class="map-facade" href="https://maps.google.com/maps?q=1509+SW+22+Ct,+Bell,+FL+32619" target="_blank" rel="noopener noreferrer" aria-label="Open Suwannee Bell Farms location in Google Maps">
-          <img src="../images/gallery-3.webp" alt="Map preview — 1509 SW 22 Ct, Bell, Florida 32619" width="800" height="480" loading="lazy" decoding="async">
-          <span class="map-facade__cta btn btn--forest">Open in Google Maps</span>
-        </a>
+
+        <div class="contact-bottom-row">
+          <!-- <form id="contact-form" class="contact-original-form" aria-label="Contact form">
+            <p>
+              <label for="contact-name">Name</label><br>
+              <input type="text" id="contact-name" name="your-name" autocomplete="name" required>
+            </p>
+            <p>
+              <label for="contact-email">Email</label><br>
+              <input type="email" id="contact-email" name="your-email" autocomplete="email" required>
+            </p>
+            <p>
+              <label for="contact-subject">Subject</label><br>
+              <input type="text" id="contact-subject" name="your-subject" required>
+            </p>
+            <p>
+              <label for="contact-message">Message</label><br>
+              <textarea id="contact-message" name="your-message" rows="10"></textarea>
+            </p>
+            <p>
+              <button type="submit" class="btn contact-submit">Submit</button>
+            </p>
+          </form> -->
+
+          <!-- <a id="map-facade" class="contact-map-facade" href="https://maps.google.com/maps?q=1509+SW+22+Ct,+Bell,+FL+32619" target="_blank" rel="noopener noreferrer" aria-label="Open Suwannee Bell Farms location in Google Maps">
+            <img src="../images/gallery-3.webp" alt="Map preview for 1509 SW 22 Ct, Bell, Florida 32619" width="600" height="450" loading="lazy" decoding="async">
+            <span class="contact-map-facade__panel">
+              <strong>Suwannee Bell Farms LLC</strong>
+              <span>1509 SW 22 Ct. Bell, Florida 32619</span>
+              <span class="contact-map-facade__cta">Open in Google Maps</span>
+            </span>
+          </a> -->
+        </div>
       </div>
     </section>
   </main>

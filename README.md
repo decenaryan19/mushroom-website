@@ -19,7 +19,7 @@ A high-performance static clone of [suwanneebellfarms.com](https://suwanneebellf
 - **Optimized WebP images** — responsive hero with mobile variants, lazy loading below the fold
 - **Minimal JavaScript** — vanilla JS, deferred, no third-party scripts
 - **No render-blocking Google Fonts or Maps iframe** — contact page uses a static map link
-- **Cache headers** — `_headers` for long-lived static assets on Cloudflare Pages
+- **Cache headers** — `_headers` for long-lived static assets on Cloudflare Pages (1 year for CSS, JS, images, fonts)
 
 ## Project structure
 
@@ -58,3 +58,11 @@ python scripts/build_pages.py
 python scripts/optimize_images.py
 python scripts/optimize_hero.py
 ```
+
+## Deploy for 100 mobile PageSpeed
+
+**GitHub Pages** (`*.github.io`) serves static assets with a short ~10 minute cache TTL and cannot use `_headers`. Image delivery and non-blocking CSS matter most there.
+
+**Cloudflare Pages** (recommended for cache audit) uses `_headers` automatically. Connect the repo in Cloudflare Pages, or add `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets and push to `main` to use `.github/workflows/cloudflare-pages.yml`.
+
+After any deploy, hard-refresh and re-run [PageSpeed Insights](https://pagespeed.web.dev/) on mobile.

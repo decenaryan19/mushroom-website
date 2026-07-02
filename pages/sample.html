@@ -6,15 +6,19 @@
   <title>Request Free Sample | Suwannee Bell Farms</title>
   <meta name="description" content="Request a free sample of organic oak log shiitake mushrooms from Suwannee Bell Farms.">
   <meta name="theme-color" content="#3d7a3d">
-  <link rel="preload" href="../css/styles.css" as="style">
-  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#fffdee;color:#1f2937}
+    .site-header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  </style>
+  <link rel="preload" href="../css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
 </head>
 <body>
 
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="../index.html" class="site-logo" aria-label="Suwannee Bell Farms — Home">
-        <img src="../images/logo.webp" alt="Suwannee Bell Farms logo" width="52" height="52" decoding="async">
+        <img src="../images/logo.webp" alt="Suwannee Bell Farms logo" width="44" height="44" decoding="async">
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="../index.html">HOME</a>
@@ -46,52 +50,49 @@
   </header>
   <main>
 
-    <div class="banner">
+    <div class="banner banner--request-sample">
       <h1>Request Your Free Shiitake Sample Today!</h1>
     </div>
-    <section class="section sample-page">
-      <div class="container container--narrow">
-        <div class="sample-intro">
-          <p>Experience the rich, earthy flavors of our premium organic oak log shiitake mushrooms — hand-harvested at peak maturity from our forest farm in Bell, Florida.</p>
-          <div>
-            <h2>What you'll receive:</h2>
-            <ul class="about-list">
-              <li>A generous portion of our organic oak log forest grown shiitake mushrooms</li>
-              <li>Freshly harvested and shipped within 24 hours</li>
-              <li>Information about our growing methods and farm practices</li>
-              <li>Recipe suggestions from our culinary partners</li>
-            </ul>
-          </div>
-          <div>
-            <h2>Why choose our shiitake mushrooms?</h2>
-            <ul class="about-list">
-              <li>Certified organic, grown on sustainably harvested oak logs</li>
-              <li>Distinctive cracked cap pattern indicating premium quality</li>
-              <li>Rich umami flavor and meaty texture</li>
-              <li>Hand-selected at peak maturity for maximum flavor and nutrition</li>
-            </ul>
-          </div>
+    <section class="request-sample-section">
+      <div class="container">
+        <div class="request-copy">
+          <p>Experience the rich, earthy flavors and culinary versatility of our premium shiitake mushrooms. We're so confident you'll love them, we're offering a free sample!</p>
+          <p><strong>What you'll receive:</strong></p>
+          <p>A generous portion of our organic, hand-cultivated shiitake mushrooms</p>
+          <p>A sneak peek into the sustainable practices behind our farm</p>
+          <p><strong>Why choose our shiitake mushrooms?</strong></p>
+          <p>Grown with love and care on our family farm</p>
+          <p>Meaty texture, intense umami flavor perfect for soups, stir-fries, stews, and more</p>
+          <p>Nutrient-rich source of vitamins, minerals, and antioxidants</p>
+          <p>Traditional Oak log organic cultivation</p>
+          <p>Sustainably sourced, using eco-friendly methods</p>
+          <p><strong>Ready to savor the taste of earth's bounty?</strong></p>
+          <p>Simply fill out the form below and we'll send your free sample directly to your doorstep. Free Delivery within 25 miles of Gainesville! Subject to availability. Restrictions may apply.</p>
         </div>
-        <form id="sample-form" class="form-grid">
-          <div>
-            <label for="company-name" class="form-label">Company Name</label>
-            <input type="text" id="company-name" name="company" class="form-input" required>
-          </div>
-          <div>
-            <label for="sample-email" class="form-label">Email Address</label>
-            <input type="email" id="sample-email" name="email" class="form-input" required>
-          </div>
-          <div>
-            <label for="business-phone" class="form-label">Business Phone</label>
-            <input type="tel" id="business-phone" name="phone" class="form-input" required>
-          </div>
-          <div>
-            <label for="sample-address" class="form-label">Address</label>
-            <textarea id="sample-address" name="address" rows="4" class="form-input form-textarea" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--forest">Submit</button>
-        </form>
-        <p class="sample-note">Limited quantities available, so don't miss out!</p>
+
+        <!-- <form id="sample-form" class="request-form" aria-label="Contact form">
+          <p>
+            <label for="company-name">Company Name</label><br>
+            <input type="text" id="company-name" name="your-name" required>
+          </p>
+          <p>
+            <label for="sample-email">Email Address</label><br>
+            <input type="email" id="sample-email" name="your-email" required>
+          </p>
+          <p>
+            <label for="business-phone">Business Phone</label><br>
+            <input type="tel" id="business-phone" name="tel-759" required>
+          </p>
+          <p>
+            <label for="sample-address">Address</label><br>
+            <textarea id="sample-address" name="textarea-543" rows="10" required></textarea>
+          </p>
+          <p>
+            <button type="submit" class="btn request-submit">Submit</button>
+          </p>
+        </form> -->
+
+        <h3 class="sample-note-original">Limited quantities available, so don't miss out!</h3>
       </div>
     </section>
   </main>

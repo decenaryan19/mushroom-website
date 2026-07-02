@@ -6,10 +6,17 @@
   <title>Suwannee Bell Farms | Oak Log Shiitake Mushrooms</title>
   <meta name="description" content="Premium organic oak log forest grown shiitake mushrooms, sustainably cultivated in Bell, Florida.">
   <meta name="theme-color" content="#3d7a3d">
-  <link rel="preload" href="css/styles.css" as="style">
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#fffdee;color:#1f2937}
+    .site-header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+    .hero{position:relative;overflow:hidden;background:#1f2937}
+    .hero-slide img{width:100%;height:60vw;max-height:600px;object-fit:cover;display:block}
+    @media (min-width:850px){.hero-slide img{height:600px}}
+  </style>
   <link rel="preload" href="images/hero-1-mobile.webp" as="image" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
   <link rel="preload" href="images/hero-1.webp" as="image" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
 </head>
 <body>
   <header class="site-header">
@@ -52,13 +59,13 @@
         <div class="hero-slide is-active">
           <picture>
             <source media="(min-width: 768px)" srcset="images/hero-1.webp" type="image/webp">
-            <img src="images/hero-1-mobile.webp" alt="Fresh gourmet mushrooms on a light surface" width="828" height="466" fetchpriority="high" decoding="async">
+            <img src="images/hero-1-mobile.webp" alt="Fresh gourmet mushrooms on a light surface" width="640" height="360" fetchpriority="high" decoding="async" sizes="100vw">
           </picture>
         </div>
         <div class="hero-slide">
           <picture>
             <source media="(min-width: 768px)" srcset="images/hero-2.webp" type="image/webp">
-            <img src="images/hero-2-mobile.webp" alt="Freshly harvested shiitake mushrooms" width="828" height="466" loading="lazy" decoding="async">
+            <img src="images/hero-2-mobile.webp" alt="Freshly harvested shiitake mushrooms" width="640" height="360" loading="lazy" decoding="async" sizes="100vw">
           </picture>
         </div>
         <div class="hero__overlay">
@@ -83,14 +90,16 @@
             <div class="prose">
               <p>Looking for a delicious, nutritious, and sustainable mushroom? Look no further than organic oak log forest grown shiitake mushrooms! These mushrooms are grown on oak logs in the forest, where they have access to all the nutrients they need to thrive. The result is a mushroom that is packed with flavor, umami, and essential nutrients.</p>
               <p>Shiitake mushrooms are a good source of protein, fiber, and vitamins B and C. They are also low in calories and fat. Shiitake mushrooms have been shown to have a number of health benefits, including boosting the immune system, reducing inflammation, and improving heart health.</p>
-              <p>Organic oak log forest grown shiitake mushrooms are also a sustainable choice. Unlike many other mushrooms, shiitake mushrooms are not grown in artificial environments. Instead, they are grown on oak logs, which are a renewable resource.</p>
-              <p>We are so confident that you will love our organic oak log forest grown shiitake mushrooms that we offer a 100% satisfaction guarantee. Order now and taste the difference!</p>
+              <p>Organic oak log forest grown shiitake mushrooms are also a sustainable choice. Unlike many other mushrooms, shiitake mushrooms are not grown in artificial environments. Instead, they are grown on oak logs, which are a renewable resource. This means that you can enjoy these delicious and nutritious mushrooms without harming the environment.</p>
+              <p>Order your organic oak log forest grown shiitake mushrooms today and experience the difference! These mushrooms are perfect for a variety of dishes, from stir-fries and soups to stews and pizzas. With their rich flavor and umami, shiitake mushrooms will add a new dimension to your cooking.</p>
+              <p>We are so confident that you will love our organic oak log forest grown shiitake mushrooms that we offer a 100% satisfaction guarantee. If you are not happy with your purchase, simply return it for a full refund.</p>
+              <p>Order now and taste the difference!</p>
             </div>
             <a href="pages/product.html" class="btn btn--forest mt-8">Buy Now</a>
           </div>
           <div class="grid-2__media">
             <div class="product-image-wrap">
-              <img src="images/product.webp" alt="Fresh organic shiitake mushrooms on a ceramic plate" width="600" height="800" loading="lazy" decoding="async">
+              <img src="images/product-384.webp" srcset="images/product-384.webp 384w, images/product.webp 600w" sizes="(min-width: 1024px) 384px, 90vw" alt="Fresh organic shiitake mushrooms on a ceramic plate" width="384" height="512" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
@@ -108,7 +117,7 @@
         <div class="card-grid card-grid--3">
           <article class="media-card">
             <div class="media-card__image">
-              <img src="images/recipe-grill.webp" alt="Grilled shiitake mushrooms on a wooden board" width="640" height="400" loading="lazy" decoding="async">
+              <img src="images/recipe-grill-400.webp" srcset="images/recipe-grill-400.webp 400w, images/recipe-grill.webp 533w" sizes="(min-width: 1024px) 368px, 90vw" alt="Grilled shiitake mushrooms on a wooden board" width="400" height="300" loading="lazy" decoding="async">
             </div>
             <div class="media-card__body">
               <h3 class="media-card__title">Grill Shiitake Mushrooms</h3>
@@ -116,7 +125,7 @@
           </article>
           <article class="media-card">
             <div class="media-card__image">
-              <img src="images/recipe-roast.webp" alt="Roasted shiitake mushrooms in a bowl" width="640" height="400" loading="lazy" decoding="async">
+              <img src="images/recipe-roast-400.webp" srcset="images/recipe-roast-400.webp 400w, images/recipe-roast.webp 533w" sizes="(min-width: 1024px) 368px, 90vw" alt="Roasted shiitake mushrooms in a bowl" width="400" height="300" loading="lazy" decoding="async">
             </div>
             <div class="media-card__body">
               <h3 class="media-card__title">Roast Shiitake Mushrooms</h3>
@@ -124,10 +133,10 @@
           </article>
           <article class="media-card">
             <div class="media-card__image">
-              <img src="images/recipe-stir-fry.webp" alt="Stir fry with shiitake mushrooms and vegetables" width="640" height="400" loading="lazy" decoding="async">
+              <img src="images/recipe-stir-fry-400.webp" srcset="images/recipe-stir-fry-400.webp 400w, images/recipe-stir-fry.webp 486w" sizes="(min-width: 1024px) 368px, 90vw" alt="Stir fry with shiitake mushrooms and vegetables" width="400" height="209" loading="lazy" decoding="async">
             </div>
             <div class="media-card__body">
-              <h3 class="media-card__title">Stir Fry Shiitake Mushrooms</h3>
+              <h3 class="media-card__title">Stir-Fry Shiitake Mushrooms</h3>
             </div>
           </article>
         </div>
@@ -145,16 +154,16 @@
         </button>
         <div id="gallery-pages">
           <div class="gallery-page is-active" role="tabpanel">
-            <img src="images/gallery-1.webp" alt="Shiitake mushroom growing on a mossy oak log" width="480" height="640" loading="lazy" decoding="async">
-            <img src="images/gallery-2.webp" alt="Shiitake mushroom on a vertical oak log" width="480" height="640" loading="lazy" decoding="async">
-            <img src="images/gallery-3.webp" alt="Oak log rows in the forest at sunset" width="480" height="640" loading="lazy" decoding="async">
-            <img src="images/gallery-4.webp" alt="Farmer with freshly harvested shiitake mushrooms" width="480" height="640" loading="lazy" decoding="async">
+            <img src="images/gallery-1-335.webp" srcset="images/gallery-1-335.webp 335w, images/gallery-1.webp 405w" sizes="25vw" alt="Shiitake mushroom growing on a mossy oak log" width="335" height="447" loading="lazy" decoding="async">
+            <img src="images/gallery-2-335.webp" srcset="images/gallery-2-335.webp 335w, images/gallery-2.webp 405w" sizes="25vw" alt="Shiitake mushroom on a vertical oak log" width="335" height="447" loading="lazy" decoding="async">
+            <img src="images/gallery-3-335.webp" srcset="images/gallery-3-335.webp 335w, images/gallery-3.webp 405w" sizes="25vw" alt="Oak log rows in the forest at sunset" width="335" height="447" loading="lazy" decoding="async">
+            <img src="images/gallery-4-335.webp" srcset="images/gallery-4-335.webp 335w, images/gallery-4.webp 405w" sizes="25vw" alt="Farmer with freshly harvested shiitake mushrooms" width="335" height="447" loading="lazy" decoding="async">
           </div>
           <div class="gallery-page" role="tabpanel" hidden>
-            <img src="images/gallery-5.webp" alt="Close-up of shiitake on an oak log" width="480" height="640" loading="lazy" decoding="async">
-            <img src="images/gallery-6.webp" alt="Mushroom cluster on a forest log" width="480" height="640" loading="lazy" decoding="async">
-            <img src="images/gallery-7.webp" alt="Forest mushroom cultivation logs" width="480" height="640" loading="lazy" decoding="async">
-            <img src="images/gallery-8.webp" alt="Harvesting mushrooms in the forest" width="480" height="640" loading="lazy" decoding="async">
+            <img src="images/gallery-5-335.webp" srcset="images/gallery-5-335.webp 335w, images/gallery-5.webp 405w" sizes="25vw" alt="Close-up of shiitake on an oak log" width="335" height="447" loading="lazy" decoding="async">
+            <img src="images/gallery-6-335.webp" srcset="images/gallery-6-335.webp 335w, images/gallery-6.webp 405w" sizes="25vw" alt="Mushroom cluster on a forest log" width="335" height="447" loading="lazy" decoding="async">
+            <img src="images/gallery-7-335.webp" srcset="images/gallery-7-335.webp 335w, images/gallery-7.webp 405w" sizes="25vw" alt="Forest mushroom cultivation logs" width="335" height="447" loading="lazy" decoding="async">
+            <img src="images/gallery-8-335.webp" srcset="images/gallery-8-335.webp 335w, images/gallery-8.webp 405w" sizes="25vw" alt="Harvesting mushrooms in the forest" width="335" height="447" loading="lazy" decoding="async">
           </div>
         </div>
         <button type="button" class="gallery__btn gallery__btn--next" id="gallery-next" aria-label="Next page">
@@ -172,7 +181,7 @@
         <div class="card-grid card-grid--3">
           <article class="media-card">
             <div class="media-card__image">
-              <img src="images/article-1.webp" alt="Grilled mushroom skewers as a meat alternative" width="640" height="360" loading="lazy" decoding="async">
+              <img src="images/article-1-400.webp" srcset="images/article-1-400.webp 400w, images/article-1.webp 523w" sizes="(min-width: 1024px) 368px, 90vw" alt="Grilled mushroom skewers as a meat alternative" width="400" height="225" loading="lazy" decoding="async">
             </div>
             <div class="media-card__body">
               <h3 class="media-card__title">Shiitake Mushrooms as a Meat Alternative</h3>
@@ -180,7 +189,7 @@
           </article>
           <article class="media-card">
             <div class="media-card__image">
-              <img src="images/article-2.webp" alt="Hands holding freshly harvested shiitake mushrooms" width="640" height="360" loading="lazy" decoding="async">
+              <img src="images/article-2-400.webp" srcset="images/article-2-400.webp 400w, images/article-2.webp 523w" sizes="(min-width: 1024px) 368px, 90vw" alt="Hands holding freshly harvested shiitake mushrooms" width="400" height="267" loading="lazy" decoding="async">
             </div>
             <div class="media-card__body">
               <h3 class="media-card__title">The History of Shiitake Mushrooms</h3>
@@ -188,7 +197,7 @@
           </article>
           <article class="media-card">
             <div class="media-card__image">
-              <img src="images/article-3.webp" alt="Nutritious vegan bowl with shiitake mushrooms" width="640" height="360" loading="lazy" decoding="async">
+              <img src="images/article-3-400.webp" srcset="images/article-3-400.webp 400w, images/article-3.webp 480w" sizes="(min-width: 1024px) 368px, 90vw" alt="Nutritious vegan bowl with shiitake mushrooms" width="400" height="300" loading="lazy" decoding="async">
             </div>
             <div class="media-card__body">
               <h3 class="media-card__title">A Delicious and Nutritious Vegan Choice</h3>

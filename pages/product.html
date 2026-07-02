@@ -6,15 +6,19 @@
   <title>Fresh Organic Oak Log Shiitake Mushrooms | Suwannee Bell Farms</title>
   <meta name="description" content="Shop fresh organic oak log forest grown shiitake mushrooms from Suwannee Bell Farms.">
   <meta name="theme-color" content="#3d7a3d">
-  <link rel="preload" href="../css/styles.css" as="style">
-  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#fffdee;color:#1f2937}
+    .site-header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  </style>
+  <link rel="preload" href="../css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
 </head>
 <body>
 
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="../index.html" class="site-logo" aria-label="Suwannee Bell Farms — Home">
-        <img src="../images/logo.webp" alt="Suwannee Bell Farms logo" width="52" height="52" decoding="async">
+        <img src="../images/logo.webp" alt="Suwannee Bell Farms logo" width="44" height="44" decoding="async">
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="../index.html">HOME</a>
@@ -45,74 +49,121 @@
     </nav>
   </header>
   <main>
-
-    <section class="section section--white">
+    <section class="product-main-section">
       <div class="container">
-        <div class="product-layout">
+        <div class="product-layout product-layout--single">
           <div class="product-page-image">
-            <img id="product-main-image" src="../images/product.webp" alt="Fresh organic shiitake mushrooms in a white bowl" width="600" height="800" loading="eager" decoding="async">
+            <img id="product-main-image" src="../images/product.webp" alt="Fresh Organic Oak Log Shiitake Mushrooms: A Taste of the Forest" width="600" height="800" loading="eager" decoding="async">
             <button type="button" id="expand-image-btn" class="product-expand-btn" aria-label="Expand image">
               <svg aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
             </button>
           </div>
-          <div>
-            <h1 class="section-title">Fresh Organic Oak Log Shiitake Mushrooms: A Taste of the Forest</h1>
+          <div class="product-summary">
+            <nav class="product-breadcrumb" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span>/</span>
+              <a href="product.html">Uncategorized</a>
+            </nav>
+            <h1 class="product-title">Fresh Organic Oak Log Shiitake Mushrooms: A Taste of the Forest</h1>
+            <div class="is-divider small"></div>
             <p class="product-price">$25.00 – $250.00</p>
-            <p style="color:var(--terracotta);margin-bottom:1.5rem;">Experience the rich, earthy flavor of our premium shiitake mushrooms, cultivated on sustainably harvested oak logs in the heart of the forest.</p>
-            <form id="product-form" class="form-grid">
-              <div>
-                <label for="package-select" class="form-label">Packages</label>
-                <select id="package-select" class="product-select">
-                  <option value="">Choose an option</option>
-                  <option value="half-pound">Half Pound — $25.00</option>
-                  <option value="one-pound">One Pound — $45.00</option>
-                  <option value="two-pound">Two Pounds — $85.00</option>
-                  <option value="five-pound">Five Pounds — $200.00</option>
-                  <option value="ten-pound">Ten Pounds — $250.00</option>
-                </select>
-              </div>
-              <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;">
+            <div class="product-short-description">
+              <h4>Hand-harvested for peak umami, these woodland treasures deliver an unrivaled depth of flavor and earthiness.</h4>
+              <ul>
+                <li>Harvested at their peak for maximum flavor and freshness</li>
+                <li>Large, meaty caps with thick, flavorful stems</li>
+                <li>Rich in umami, vitamins, and minerals</li>
+                <li>Perfect for grilling, sauteing, roasting, or adding to soups and stews</li>
+              </ul>
+            </div>
+            <form id="product-form" class="variations-form">
+              <table class="variations" role="presentation">
+                <tbody>
+                  <tr>
+                    <th class="label"><label for="package-select">Packages</label></th>
+                    <td class="value">
+                      <select id="package-select" class="product-select" name="attribute_packages">
+                        <option value="">Choose an option</option>
+                        <option value="1lb">1lb</option>
+                        <option value="2lb">2lb</option>
+                        <option value="5lb">5lb</option>
+                        <option value="10lb">10lb</option>
+                      </select>
+                      <a class="reset-variations" href="#" aria-label="Clear options" style="visibility: hidden;">Clear</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="single-variation-wrap">
                 <div class="qty-row">
-                  <button type="button" id="qty-minus" class="qty-btn" aria-label="Decrease quantity">−</button>
+                  <button type="button" id="qty-minus" class="qty-btn" aria-label="Decrease quantity">-</button>
                   <input type="number" id="qty-input" value="1" min="1" max="99" class="qty-input" aria-label="Quantity">
                   <button type="button" id="qty-plus" class="qty-btn" aria-label="Increase quantity">+</button>
                 </div>
-                <button type="submit" class="btn btn--terracotta">Buy Now</button>
+                <button type="submit" class="btn btn--terracotta single-add-to-cart">Buy Now</button>
               </div>
             </form>
           </div>
         </div>
       </div>
     </section>
-    <section class="section section--white">
+
+    <section class="product-footer-section">
       <div class="container">
         <div class="product-tabs" role="tablist">
           <button type="button" class="product-tab is-active" role="tab" aria-selected="true" data-tab="description">Description</button>
-          <button type="button" class="product-tab" role="tab" aria-selected="false" data-tab="additional">Additional Information</button>
+          <button type="button" class="product-tab" role="tab" aria-selected="false" data-tab="additional">Additional information</button>
           <button type="button" class="product-tab" role="tab" aria-selected="false" data-tab="reviews">Reviews (0)</button>
         </div>
-        <div id="tab-description" class="product-tab-panel is-active" role="tabpanel">
-          <h2 class="section-title" style="font-size:1.25rem;">Fresh Organic Oak Log Shiitake Mushrooms</h2>
-          <div class="prose">
-            <p>Our shiitake mushrooms are grown using the traditional Japanese method of log cultivation — a time-honored practice that produces mushrooms of exceptional quality, flavor, and nutritional value.</p>
-            <p>Shiitake mushrooms (Lentinula edodes) have been prized for centuries in Asian cuisine for their rich, savory umami flavor and meaty texture.</p>
+        <div class="tab-panels">
+          <div id="tab-description" class="product-tab-panel is-active product-description" role="tabpanel">
+            <h4><strong>Fresh Organic Oak Log Shiitake Mushrooms</strong></h4>
+            <p>Indulge in the earthy goodness of nature's finest mushrooms. Cultivated with care on traditional oak logs, our fresh organic Shiitake mushrooms embody sustainability and wholesome living. These meaty, flavorful gems are not only a culinary delight but also a nutritional powerhouse, brimming with health-promoting benefits. By opting for our fresh, organic Shiitake mushrooms, you are not only indulging in a culinary delicacy but also making a conscious choice for the environment. Our sustainable farming practices ensure beneficial impact on the ecosystem, promoting forest conservation, soil health and biodiversity.</p>
+            <h4><strong>Unveil the Essence of Shiitake Mushrooms</strong></h4>
+            <p>Shiitake mushrooms, prized for their rich umami taste and velvety texture, have graced Asian cuisine for centuries. Renowned for their culinary versatility, they can be enjoyed sauteed, grilled, steamed, or even added to soups and stews. Their meaty texture makes them an excellent meat substitute, perfect for vegetarians and vegans alike.</p>
+            <h4><strong>Nurtured by Nature's Embrace</strong></h4>
+            <p>Our fresh organic Shiitake mushrooms are meticulously cultivated on traditional oak logs, adhering to the strictest organic farming practices. This time-honored method mimics the natural growing conditions of shiitake mushrooms, allowing them to fully absorb the nutrients from the decaying wood.</p>
+            <h4><strong>A Masterpiece of Flavors and Nutrients</strong></h4>
+            <p>Each bite of our Fresh Organic Shiitake Mushrooms is an explosion of flavor, with a hint of smokiness and a delicate sweetness. These versatile mushrooms are not only a culinary delight but also a nutritional powerhouse. They are packed with an abundance of essential nutrients, including:</p>
+            <p>- <strong>Vitamin D:</strong> Essential for bone health and immune function</p>
+            <p>- <strong>B vitamins:</strong> Crucial for energy production and metabolism</p>
+            <p>- <strong>Copper:</strong> Plays a vital role in iron absorption and red blood cell production</p>
+            <p>- <strong>Potassium:</strong> Regulates blood pressure and muscle function</p>
+            <p>- <strong>Selenium:</strong> A potent antioxidant that protects cells from damage</p>
+            <p>- <strong>Dietary fiber:</strong> Promotes digestive health and satiety</p>
+            <h4><strong>Embark on a Culinary Adventure</strong></h4>
+            <p>Unleash your culinary creativity with our fresh organic oak log Shiitake mushrooms. Their versatility knows no bounds, from stir-fries to risottos, they elevate every dish with their rich umami flavor and velvety texture.</p>
+            <p>Order your supply today and experience the symphony of flavors and nourishment that our fresh, organic, oak log Shiitake mushrooms have to offer.</p>
+            <h4><strong>Additional Benefits</strong></h4>
+            <p><strong>Low in calories and fat:</strong> Ideal for weight management</p>
+            <p><strong>Rich in antioxidants:</strong> Protect cells from damage and may reduce the risk of chronic diseases.</p>
+            <p><strong>Contains probiotics:</strong> Support microbiotic gut health and nutrient absorption.</p>
+            <p><strong>May boost immune function:</strong> Certain compounds in shiitake mushrooms may enhance immune cell activity.</p>
+            <p>Nourish your body and indulge your taste buds with our fresh, organic, oak log Shiitake mushrooms, an all natural culinary treasure from nature's oak forest.</p>
+            <p>No synthetic fertilizers, pesticides, herbicides or other chemicals will ever touch our fields or your food.</p>
+            <h4><strong>Choose a Package:</strong></h4>
+            <p><strong>When Mother Nature throws us a curveball, our Shiitake packages may be in short supply or unavailable at times. Please contact us for current availabilty.</strong></p>
           </div>
-        </div>
-        <div id="tab-additional" class="product-tab-panel" role="tabpanel" hidden>
-          <table class="product-info-table">
-            <tbody>
-              <tr><th>Weight</th><td>0.5 lb, 1 lb, 2 lb, 5 lb, 10 lb</td></tr>
-              <tr><th>Ingredients</th><td>100% Organic Shiitake Mushrooms (Lentinula edodes)</td></tr>
-              <tr><th>Growing Method</th><td>Oak log forest cultivation</td></tr>
-              <tr><th>Origin</th><td>Suwannee Valley, Florida, USA</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div id="tab-reviews" class="product-tab-panel" role="tabpanel" hidden>
-          <p style="color:var(--text-muted);padding:1.5rem 0;">There are no reviews yet. Be the first to review our shiitake mushrooms.</p>
+          <div id="tab-additional" class="product-tab-panel" role="tabpanel" hidden>
+            <table class="product-info-table">
+              <tbody>
+                <tr><th>Packages</th><td>1lb, 2lb, 5lb, 10lb</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="tab-reviews" class="product-tab-panel" role="tabpanel" hidden>
+            <div class="reviews-panel">
+              <h3>Reviews</h3>
+              <p>There are no reviews yet.</p>
+              <div class="review-form-inner">
+                <h3>Be the first to review "Fresh Organic Oak Log Shiitake Mushrooms: A Taste of the Forest"</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
     <div id="image-lightbox" class="image-lightbox" role="dialog" aria-label="Product image preview" hidden>
       <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close preview">&times;</button>
       <img src="../images/product.webp" alt="Fresh organic shiitake mushrooms enlarged view" width="600" height="800">
