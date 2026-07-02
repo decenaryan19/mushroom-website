@@ -46,6 +46,24 @@ Open `http://localhost:8765`
 
 Deploy the folder root to **Cloudflare Pages** (or any static host). Run PageSpeed Insights against your live URL after deploy.
 
+### Cloudflare Pages settings
+
+For normal **Cloudflare Pages Git integration**, use:
+
+```text
+Framework preset: None
+Build command: 
+Build output directory: .
+```
+
+If your Cloudflare setup asks specifically for a **Deploy command** like the log above, use:
+
+```bash
+npm run deploy
+```
+
+Do not use `npx wrangler deploy` for this project. That command deploys a Worker and requires a `workers.dev` subdomain or route. This site is static and should deploy with `wrangler pages deploy`.
+
 ## Rebuild subpages
 
 ```bash
