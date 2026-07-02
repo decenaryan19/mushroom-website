@@ -4,7 +4,7 @@
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("../fonts/playfair-display-v37-latin-regular.woff2") format("woff2");
 }
 
@@ -12,7 +12,7 @@
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: optional;
   src: url("../fonts/playfair-display-v37-latin-600.woff2") format("woff2");
 }
 
@@ -20,7 +20,7 @@
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url("../fonts/playfair-display-v37-latin-700.woff2") format("woff2");
 }
 
@@ -28,16 +28,8 @@
   font-family: "Libre Baskerville";
   font-style: normal;
   font-weight: 400 700;
-  font-display: swap;
+  font-display: optional;
   src: url("../fonts/libre-baskerville-v24-latin-regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Libre Franklin";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/libre-franklin-v20-latin-500.ttf") format("truetype");
 }
 
 :root {
@@ -505,23 +497,6 @@ p {
   margin-top: 0.75rem;
 }
 
-#product .section-title {
-  font-family: var(--font-product-serif);
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--forest);
-  line-height: 1.25;
-  margin-bottom: 0.625rem;
-}
-
-#product .prose {
-  font-family: var(--font-product-body);
-  font-size: 16px;
-  line-height: 1.5;
-  gap: 0.625rem;
-  color: var(--text);
-}
-
 /* Recipe / cards */
 .section-head {
   text-align: center;
@@ -669,6 +644,10 @@ p {
   color: var(--white);
 }
 
+.site-footer a {
+  color: var(--white);
+}
+
 .site-footer__main {
   padding: 2rem 0;
 }
@@ -693,11 +672,15 @@ p {
   font-family: var(--font-sans);
   font-size: 0.8125rem;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--white);
+}
+
+.footer-link {
+  color: var(--white);
 }
 
 .footer-link:hover {
-  color: var(--white);
+  text-decoration: underline;
 }
 
 .site-footer__bar {
@@ -714,7 +697,7 @@ p {
 
 .footer-copy {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--white);
 }
 
 .payment-badges {
@@ -1276,7 +1259,7 @@ body {
 .banner h1,
 .banner h2,
 .banner p {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   font-weight: 500;
   letter-spacing: 0;
@@ -1309,10 +1292,10 @@ body {
 }
 
 #product .section-title {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: 1.125rem;
   font-weight: 500;
-  color: var(--footer);
+  color: var(--forest-dark);
   line-height: 1.3;
   margin-bottom: 0.5rem;
 }
@@ -1353,16 +1336,22 @@ body {
 }
 
 .logo-mark {
-  width: 100px;
-  height: auto;
+  width: 36px;
+  height: 36px;
+  margin-inline: auto;
   margin-bottom: 0.15rem;
 }
 
+.logo-mark img {
+  width: 36px;
+  height: 36px;
+}
+
 .section-head .section-title {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: 2rem;
   font-weight: 500;
-  color: var(--footer);
+  color: var(--forest-dark);
 }
 
 .card-grid {
@@ -1386,10 +1375,10 @@ body {
 }
 
 .media-card__title {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: 1.17rem;
   font-weight: 500;
-  color: var(--footer);
+  color: var(--forest-dark);
   line-height: 1.3;
 }
 
@@ -1441,6 +1430,7 @@ body {
 .footer-links {
   font-size: 1rem;
   line-height: 1.55;
+  color: var(--white);
 }
 
 @media (min-width: 850px) {
@@ -1553,11 +1543,11 @@ body {
 }
 
 .product-title {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: clamp(1.7rem, 3vw, 2.6rem);
   font-weight: 500;
   line-height: 1.15;
-  color: var(--footer);
+  color: var(--forest-dark);
   margin-bottom: 0.65rem;
 }
 
@@ -1582,7 +1572,7 @@ body {
 }
 
 .product-short-description h4 {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.4;
@@ -1704,10 +1694,10 @@ body {
 }
 
 .product-description h4 {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: 1.125rem;
   font-weight: 500;
-  color: var(--footer);
+  color: var(--forest-dark);
   margin: 0 0 0.7rem;
 }
 
@@ -1722,9 +1712,9 @@ body {
 }
 
 .reviews-panel h3 {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-weight: 500;
-  color: var(--footer);
+  color: var(--forest-dark);
   margin-bottom: 1rem;
 }
 
@@ -1751,7 +1741,7 @@ body {
 }
 
 .banner--about h1 {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   font-weight: 500;
   letter-spacing: 0;
@@ -1801,7 +1791,7 @@ body {
 }
 
 .banner--request-sample h1 {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   font-weight: 500;
   letter-spacing: 0;
@@ -1882,7 +1872,7 @@ body {
 }
 
 .sample-note-original {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   font-weight: 500;
   text-align: center;
@@ -1903,7 +1893,7 @@ body {
 }
 
 .banner--contact h1 {
-  font-family: "Libre Franklin", var(--font-sans);
+  font-family: var(--font-sans);
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   font-weight: 500;
   letter-spacing: 0;

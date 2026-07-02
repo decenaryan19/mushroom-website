@@ -13,3 +13,6 @@ Thumbs.db
 
 # Reports
 lighthouse*.json
+
+# Cloudflare deploy output (generated locally)
+dist/

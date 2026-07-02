@@ -1,24 +1,36 @@
-# Git metadata — must never be uploaded as static assets
+# Never upload dev / VCS / build tooling
 .git
 **/.git
 **/.git/**
-
-# Unoptimized originals from fetch script
-images/raw
-images/raw/**
-
-# Full-size PNG sources (site serves WebP only)
-**/*.png
-
-# Dev / build tooling
+node_modules
+**/node_modules/**
+.github
+**/.github/**
 scripts
 scripts/**
 .vscode
 .vscode/**
+dist
+dist/**
 
-# Python
-**/__pycache__
-**/*.pyc
+# Unoptimized originals (site serves WebP only)
+images/raw
+images/raw/**
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+**/*.pdf
 
-# Local reports
+# Dev / config (not needed on the live site)
+*.md
+package.json
+package-lock.json
+wrangler.toml
+.gitignore
+.gitattributes
+.assetsignore
 lighthouse*.json
+
+# Unused font (removed from CSS)
+fonts/*.ttf

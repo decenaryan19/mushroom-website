@@ -48,21 +48,23 @@ Deploy the folder root to **Cloudflare Pages** (or any static host). Run PageSpe
 
 ### Cloudflare Pages settings
 
-For normal **Cloudflare Pages Git integration**, use:
+For **Cloudflare Pages Git integration** (dashboard), use:
 
 ```text
 Framework preset: None
-Build command: 
-Build output directory: .
+Build command:    python scripts/prepare_deploy.py
+Build output directory: dist
 ```
 
-If your Cloudflare setup asks specifically for a **Deploy command** like the log above, use:
+For **CLI deploy** from your machine:
 
 ```bash
 npm run deploy
 ```
 
-Do not use `npx wrangler deploy` for this project. That command deploys a Worker and requires a `workers.dev` subdomain or route. This site is static and should deploy with `wrangler pages deploy`.
+This builds a clean `dist/` folder (WebP, HTML, CSS, JS only — no `.git`, PNG originals, or dev files) then uploads it. Cloudflare rejects any single file over **25 MiB**; deploying the whole repo root (`.`) often fails because `.git` or large PNG sources get included.
+
+Do not use `npx wrangler deploy` for this project. That command deploys a Worker and requires a `workers.dev` subdomain or route. This site is static and should deploy with `wrangler pages deploy dist`.
 
 ## Rebuild subpages
 

@@ -64,6 +64,13 @@ RESPONSIVE = {
     "article-3.webp": [("article-3-400.webp", 400, 54)],
 }
 
+# Variants generated from another source file (name, source, max_w, max_h, quality)
+DERIVED = {
+    "logo-36.webp": ("logo.webp", 36, 36, 70),
+    "logo-44.webp": ("logo.webp", 44, 44, 70),
+    "logo-90.webp": ("logo.webp", 90, 90, 70),
+}
+
 
 def open_rgb(path: Path) -> Image.Image:
     img = Image.open(path)
@@ -113,6 +120,16 @@ def main() -> None:
       dest = IMG / variant_name
       save_webp(variant, dest, variant_q)
       print(f"  -> {variant_name}: {dest.stat().st_size // 1024} KB ({variant.size[0]}x{variant.size[1]})")
+
+  for name, (src_name, max_w, max_h, quality) in DERIVED.items():
+    src = IMG / src_name
+    if not src.exists():
+      print(f"SKIP {name} (source {src_name} missing)")
+      continue
+    img = fit_within(open_rgb(src), max_w, max_h)
+    dest = IMG / name
+    save_webp(img, dest, quality)
+    print(f"{name}: {dest.stat().st_size // 1024} KB ({img.size[0]}x{img.size[1]})")
 
   print("Done.")
 
