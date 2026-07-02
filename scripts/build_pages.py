@@ -291,84 +291,10 @@ pages = {
       </div>
     </section>""",
     ),
-    "product.html": layout(
-        "product",
-        "Fresh Organic Oak Log Shiitake Mushrooms | Suwannee Bell Farms",
-        "Shop fresh organic oak log forest grown shiitake mushrooms from Suwannee Bell Farms.",
-        """
-    <section class="section section--white">
-      <div class="container">
-        <div class="product-layout">
-          <div class="product-page-image">
-            <img id="product-main-image" src="../images/product.webp" alt="Fresh organic shiitake mushrooms in a white bowl" width="600" height="800" loading="eager" decoding="async">
-            <button type="button" id="expand-image-btn" class="product-expand-btn" aria-label="Expand image">
-              <svg aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
-            </button>
-          </div>
-          <div>
-            <h1 class="section-title">Fresh Organic Oak Log Shiitake Mushrooms: A Taste of the Forest</h1>
-            <p class="product-price">$25.00 – $250.00</p>
-            <p style="color:var(--terracotta);margin-bottom:1.5rem;">Experience the rich, earthy flavor of our premium shiitake mushrooms, cultivated on sustainably harvested oak logs in the heart of the forest.</p>
-            <form id="product-form" class="form-grid">
-              <div>
-                <label for="package-select" class="form-label">Packages</label>
-                <select id="package-select" class="product-select">
-                  <option value="">Choose an option</option>
-                  <option value="half-pound">Half Pound — $25.00</option>
-                  <option value="one-pound">One Pound — $45.00</option>
-                  <option value="two-pound">Two Pounds — $85.00</option>
-                  <option value="five-pound">Five Pounds — $200.00</option>
-                  <option value="ten-pound">Ten Pounds — $250.00</option>
-                </select>
-              </div>
-              <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;">
-                <div class="qty-row">
-                  <button type="button" id="qty-minus" class="qty-btn" aria-label="Decrease quantity">−</button>
-                  <input type="number" id="qty-input" value="1" min="1" max="99" class="qty-input" aria-label="Quantity">
-                  <button type="button" id="qty-plus" class="qty-btn" aria-label="Increase quantity">+</button>
-                </div>
-                <button type="submit" class="btn btn--terracotta">Buy Now</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section section--white">
-      <div class="container">
-        <div class="product-tabs" role="tablist">
-          <button type="button" class="product-tab is-active" role="tab" aria-selected="true" data-tab="description">Description</button>
-          <button type="button" class="product-tab" role="tab" aria-selected="false" data-tab="additional">Additional Information</button>
-          <button type="button" class="product-tab" role="tab" aria-selected="false" data-tab="reviews">Reviews (0)</button>
-        </div>
-        <div id="tab-description" class="product-tab-panel is-active" role="tabpanel">
-          <h2 class="section-title" style="font-size:1.25rem;">Fresh Organic Oak Log Shiitake Mushrooms</h2>
-          <div class="prose">
-            <p>Our shiitake mushrooms are grown using the traditional Japanese method of log cultivation — a time-honored practice that produces mushrooms of exceptional quality, flavor, and nutritional value.</p>
-            <p>Shiitake mushrooms (Lentinula edodes) have been prized for centuries in Asian cuisine for their rich, savory umami flavor and meaty texture.</p>
-          </div>
-        </div>
-        <div id="tab-additional" class="product-tab-panel" role="tabpanel" hidden>
-          <table class="product-info-table">
-            <tbody>
-              <tr><th>Weight</th><td>0.5 lb, 1 lb, 2 lb, 5 lb, 10 lb</td></tr>
-              <tr><th>Ingredients</th><td>100% Organic Shiitake Mushrooms (Lentinula edodes)</td></tr>
-              <tr><th>Growing Method</th><td>Oak log forest cultivation</td></tr>
-              <tr><th>Origin</th><td>Suwannee Valley, Florida, USA</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div id="tab-reviews" class="product-tab-panel" role="tabpanel" hidden>
-          <p style="color:var(--text-muted);padding:1.5rem 0;">There are no reviews yet. Be the first to review our shiitake mushrooms.</p>
-        </div>
-      </div>
-    </section>
-    <div id="image-lightbox" class="image-lightbox" role="dialog" aria-label="Product image preview" hidden>
-      <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close preview">&times;</button>
-      <img src="../images/product.webp" alt="Fresh organic shiitake mushrooms enlarged view" width="600" height="800">
-    </div>""",
-    ),
 }
+
+# product.html is maintained manually — do not add it to pages{} or it will
+# overwrite the full WooCommerce-style product page with a short stub.
 
 for name, html in pages.items():
     (PAGES / name).write_text(html, encoding="utf-8")

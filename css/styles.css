@@ -1016,6 +1016,10 @@ p {
   display: block;
 }
 
+.product-tab-panel[hidden] {
+  display: none !important;
+}
+
 .product-info-table {
   width: 100%;
   border-collapse: collapse;
@@ -1703,6 +1707,18 @@ body {
 
 .product-description p {
   margin: 0 0 1rem;
+}
+
+.product-detail-list {
+  list-style: disc;
+  padding-left: 1.35rem;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.product-detail-list li {
+  line-height: 1.6;
 }
 
 .product-info-table th,
